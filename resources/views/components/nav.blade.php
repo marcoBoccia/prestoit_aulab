@@ -22,6 +22,7 @@
               <li class="nav-item">
                   <a class="nav-link active text-warning" href="{{route("announcement_form")}}">Inserisci annunci</a>
               </li>
+              
             @else    
             <li class="nav-item">
                   <a class="nav-link active text-warning" href="{{route("announcement_index")}}">Annunci</a>

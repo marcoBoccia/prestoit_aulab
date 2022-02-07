@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class AnnouncementModel extends Model
 {
@@ -12,8 +13,12 @@ class AnnouncementModel extends Model
 
 
     protected $fillable =[
-        'title', 'description'
+        'title', 'description',"category_id",
     ];
+    
+    public function categories(){
+        return $this->belongsTo(Category::class);
+    }
 }
 
 

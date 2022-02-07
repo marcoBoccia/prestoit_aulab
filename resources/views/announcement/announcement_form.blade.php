@@ -13,6 +13,15 @@
                         <label for="exampleInputPassword1" class="form-label">Inserisci la descrizione</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" name="description" value="{{old('description')}}">
                     </div>
+                    <div class="mb-3">
+                            <select class="text-warning bg-dark border-warning" name="category" multiple>
+                           @foreach ($categories as $category)
+                               <option value="{{$category->id}}">
+                                {{$category->name}}
+                                </option>
+                           @endforeach
+                            </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

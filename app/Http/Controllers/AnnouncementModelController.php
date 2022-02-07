@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AnnouncementModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
 
 class AnnouncementModelController extends Controller
 {
@@ -33,9 +34,9 @@ class AnnouncementModelController extends Controller
      */
     public function create()
     {
-        
+        $categories = Category::all();
 
-        return view('announcement.announcement_form');
+        return view('announcement.announcement_form', compact('categories'));
     }
 
     /**
@@ -46,9 +47,11 @@ class AnnouncementModelController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $announcement=AnnouncementModel::create([
             'title'=>$request->title,
             'description'=>$request->description,
+            'category_id' => $request->category,
         ]);
 
         return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');
