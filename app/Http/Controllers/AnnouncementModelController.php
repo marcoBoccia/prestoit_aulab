@@ -23,8 +23,8 @@ class AnnouncementModelController extends Controller
 
 
     public function index()
-    {
-        return view('announcement.announcement_index');
+    {       $announcements = AnnouncementModel::all();
+        return view('announcement.announcement_index', compact('announcements'));
     }
 
     /**
