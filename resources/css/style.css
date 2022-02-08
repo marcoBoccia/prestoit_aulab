@@ -2,9 +2,17 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+:root {
+    --main-color: #e7ecef;
+    --second-color: #faedcd;
+    --third-color: #ade1e5;
+    --dark-color: #212529;
+    --main-gradient: linear-gradient(184deg, rgba(245, 243, 244, 0.762) 8%, rgba(229,234,253,1) 97%);
+}
+
 /* SEZIONE CATEGORIE */
 
-.category-card{
+/* .category-card{
 
     border-top: solid 8px var(--main-light);
 
@@ -62,4 +70,100 @@
 .category-card:hover img{
 
     transform: scale(1.5);
+} */
+
+/* NAVBAR */
+
+.mynavbar {
+    background-color: var(--main-color);
+}
+
+.nav-color {
+    color: var(--dark-color);
+    font-size: 21px;
+}
+
+.nav-color:hover {
+    color: black;
+}
+
+/* .nav-color:active {
+    color: black;
+} */
+
+/* MASTHEAD */
+
+.masthead {
+    background-color: var(--main-gradient);
+    background-repeat: no-repeat;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 25vh;
+}
+
+/* CARDS */
+
+.cardcontainer {
+    max-width: 350px;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 0.4s ease-in-out;
+  }
+
+.cardcontainer img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    filter: grayscale(100%);
+    transition: all 0.4s ease-in-out;
+}
+
+/* BUTTON */
+
+.button-24 {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+  
+.button-24:hover,
+.button-24:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+  
+.button-24:active {
+    opacity: .5;
 }

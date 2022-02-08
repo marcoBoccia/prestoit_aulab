@@ -3,8 +3,8 @@
         <div class="row">
 
             <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">
+                <div class="cardcontainer" style="width: 18rem;">
+                    <div class="">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">

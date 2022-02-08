@@ -18,7 +18,7 @@
                         <input type="text" class="form-control" name="price" value="{{old('price')}}">
                     </div>
                     <div class="mb-3">
-                            <select class="text-warning bg-dark border-warning" name="category" id="category" multiple>
+                            <select class="form-select" name="category" id="category" multiple>
                            @foreach ($categories as $category)
                                <option value="{{$category->id}}">
                                 {{$category->name}}
@@ -26,7 +26,7 @@
                            @endforeach
                             </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="button-24">Submit</button>
                 </form>
             </div>
         </div>
