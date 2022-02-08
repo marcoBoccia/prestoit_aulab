@@ -18,6 +18,7 @@
                             <p>
                                 <img src="https://via.placeholder.com/300x150.png" class="rounded float-right" alt="">
                                 {{ $announcement->description }}
+
                             </p>
                         </div>
                         <div class="card-footer d-flex justify-content-between">    
@@ -26,6 +27,7 @@
                             <strong>Category:<a href="#">{{ $category->name }}</a></strong>    
                             @endif
                             @endforeach
+                            <i>{{$announcement->price}}</i>
                             <i>{{ $announcement->created_at->format('d/m/Y') }} - {{ $announcement->id }}</i>
                         </div>
                     </div>

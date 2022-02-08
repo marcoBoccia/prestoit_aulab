@@ -14,6 +14,10 @@
                         <input type="text" class="form-control" id="exampleInputPassword1" name="description" value="{{old('description')}}">
                     </div>
                     <div class="mb-3">
+                        <label for="exampleInputText" class="form-label">Inserisci il prezzo</label>
+                        <input type="text" class="form-control" name="price" value="{{old('price')}}">
+                    </div>
+                    <div class="mb-3">
                             <select class="text-warning bg-dark border-warning" name="category" id="category" multiple>
                            @foreach ($categories as $category)
                                <option value="{{$category->id}}">

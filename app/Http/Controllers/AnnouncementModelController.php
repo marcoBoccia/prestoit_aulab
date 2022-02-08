@@ -53,6 +53,7 @@ class AnnouncementModelController extends Controller
             'title'=>$request->title,
             'description'=>$request->description,
             'category_id' => $request->category,
+            'price'=>$request->price,  
         ]);
 
         return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');
@@ -64,9 +65,10 @@ class AnnouncementModelController extends Controller
      * @param  \App\Models\AnnouncementModel  $announcementModel
      * @return \Illuminate\Http\Response
      */
-    public function show(AnnouncementModel $announcementModel)
+    public function show(AnnouncementModel $a)
     {
-        //
+        //dd($a);
+        return view("announcement.announcement_detail", compact("a"));
     }
 
     /**

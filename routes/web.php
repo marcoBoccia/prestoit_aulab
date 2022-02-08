@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AnnouncementModelController;
 use App\Http\Controllers\CategoryController;
+use App\Models\AnnouncementModel;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ Route::get('/' , [PublicController::class , "welcome"])->name("welcome");
 Route::get('/annunci' , [AnnouncementModelController::class , "index"])->name("announcement_index");
 Route::get('/annunci/form' , [AnnouncementModelController::class , "create"])->name("announcement_form");
 Route::post('/annunci/submit' , [AnnouncementModelController::class , "store"])->name("announcement_submit");
+Route::get('/annunci/dettaglio/{a}' , [AnnouncementModelController::class , "show"])->name("announcement_detail");
 
 
 //! ROTTE RELATIVE ALLE CATEGORIE
