@@ -16,14 +16,14 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+// ! ROTTA HOMEPAGE
 Route::get('/' , [PublicController::class , "welcome"])->name("welcome");
 
-// ROTTE PER IL FORM DEGLI ANNUNCI
-
+//! ROTTE RELATIVE AGLI ANNUNCI
 Route::get('/annunci' , [AnnouncementModelController::class , "index"])->name("announcement_index");
 Route::get('/annunci/form' , [AnnouncementModelController::class , "create"])->name("announcement_form");
 Route::post('/annunci/submit' , [AnnouncementModelController::class , "store"])->name("announcement_submit");
 
 
-// caegorie
+//! ROTTE RELATIVE ALLE CATEGORIE
 Route::get('/categorie', [CategoryController::class, 'index'])->name('category_index');

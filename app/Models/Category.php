@@ -9,10 +9,7 @@ use App\Models\AnnouncementModel;
 class Category extends Model
 {
     use HasFactory;
-    // protected $fillable = [
-    //     'nome',
-
-    // ];
+    protected $fillable = ['name'];
 
     public function announcements(){
         return $this->hasMany(AnnouncementModel::class);

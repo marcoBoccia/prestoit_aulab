@@ -16,8 +16,8 @@ class AnnouncementModel extends Model
         'title', 'description',"category_id",
     ];
     
-    public function categories(){
-        return $this->belongsTo(Category::class);
+    public function category(){
+        return $this->belongsTo(Category::class,'name');
     }
 }
 

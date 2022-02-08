@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AnnouncementModel;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
+use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\Models\AnnouncementModel;
+use Illuminate\Support\Facades\Auth;
 
 class AnnouncementModelController extends Controller
 {
@@ -17,8 +18,8 @@ class AnnouncementModelController extends Controller
 
 
         public function __construct()
-        { $this->middleware('auth');
-            
+        { 
+            $this->middleware('auth');
         }
 
 
