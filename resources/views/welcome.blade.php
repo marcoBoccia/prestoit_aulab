@@ -20,7 +20,7 @@
                                 {{ $announcement->description }}
                             </p>
                         </div>
-                        <div class="card-footer d-flex justify-content-between">
+                        <div class="card-footer d-flex justify-content-between">    
                             @foreach ($categories as $category)
                             @if ($category->id==$announcement->category_id)
                             <strong>Category:<a href="#">{{ $category->name }}</a></strong>    
