@@ -28,4 +28,6 @@ Route::get('/annunci/dettaglio/{a}' , [AnnouncementModelController::class , "sho
 
 
 //! ROTTE RELATIVE ALLE CATEGORIE
-Route::get('/categorie', [CategoryController::class, 'index'])->name('category_index');
+Route::get('/{id}', [CategoryController::class, 'index'])->name('category_index');
+
+

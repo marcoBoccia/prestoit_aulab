@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnnouncementModel;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,12 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('category.category_index');
+    public function index($id)
+    { 
+        $announcements= AnnouncementModel::where('category_id', $id)->get();
+        
+        // dd($announcements);
+        return view('category.category_index', compact('announcements'));
     }
 
     /**

@@ -17,7 +17,7 @@ class AnnouncementModel extends Model
     ];
     
     public function category(){
-        return $this->belongsTo(Category::class,'name');
+        return $this->belongsTo(Category::class);
     }
 }
 
