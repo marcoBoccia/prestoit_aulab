@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\AnnouncementModelController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\RevisorController;
 use App\Models\AnnouncementModel;
 
 /*
@@ -26,8 +27,9 @@ Route::get('/annunci/form' , [AnnouncementModelController::class , "create"])->n
 Route::post('/annunci/submit' , [AnnouncementModelController::class , "store"])->name("announcement_submit");
 Route::get('/annunci/dettaglio/{a}' , [AnnouncementModelController::class , "show"])->name("announcement_detail");
 
-
 //! ROTTE RELATIVE ALLE CATEGORIE
-Route::get('/{id}', [CategoryController::class, 'index'])->name('category_index');
+Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category_index');
 
+// !ROTTE RELATIVE AI REVISORI
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
 

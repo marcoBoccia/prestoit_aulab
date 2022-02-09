@@ -2,12 +2,20 @@
 
     <div class="container-fluid masthead">
         <div class="row justify-content-center">
+
+            @if (session("access.denied.revisor.only"))
+                <div class="alert alert-danger">
+                    {{session("access.denied.revisor.only")}}
+                </div>
+             @endif
+             
             <div class="col-6 mt-4">
                 <h1 class="display-3 fw-bold text-center">Benvenuti in Presto</h1>
             </div>
         </div>
     </div>
         
+
         <!-- sezione CATEGORIE -->
         <!-- <div class="container-fluid mt-5 py-5">
             <div class="row">
