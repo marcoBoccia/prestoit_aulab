@@ -13,11 +13,15 @@ class AnnouncementModel extends Model
 
 
     protected $fillable =[
-        'title', 'description',"category_id", "price",
+        'title', 'description',"category_id", "price","user_id",
     ];
     
     public function category(){
         return $this->belongsTo(Category::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
+
     }
 }
 

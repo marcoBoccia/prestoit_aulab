@@ -49,11 +49,21 @@ class AnnouncementModelController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $announcement=AnnouncementModel::create([
-            'title'=>$request->title,
-            'description'=>$request->description,
-            'category_id' => $request->category,
-            'price'=>$request->price,  
+        // $announcement=AnnouncementModel::create([
+        //     "user_id"
+        //     'title'=>$request->title,
+        //     'description'=>$request->description,
+        //     'category_id' => $request->category,
+        //     'price'=>$request->price,    
+        // ]);
+
+        $user=Auth::user();
+        $user->announcements()->create([
+            
+                'description'=>$request->description,
+                'title'=>$request->title,   
+                'price'=>$request->price,    
+            
         ]);
 
         return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');

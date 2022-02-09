@@ -43,7 +43,7 @@ class User extends Authenticatable
     ];
 
 
-    // public function announcements(){
-    //     return $this->hasMany(AnnouncementModel::class);
-    // }
+    public function announcements(){
+        return $this->hasMany(AnnouncementModel::class);
+    }
 }
