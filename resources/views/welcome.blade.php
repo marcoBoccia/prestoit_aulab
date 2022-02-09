@@ -1,6 +1,6 @@
 <x-layout>
 
-    <div class="container-fluid masthead">
+    <div class="container-fluid masthead back">
         <div class="row justify-content-center">
 
             @if (session("access.denied.revisor.only"))
@@ -9,11 +9,11 @@
                 </div>
              @endif
              
-            <div class="col-6 mt-4">
-                <h1 class="display-3 fw-bold text-center">Benvenuti in Presto</h1>
             </div>
         </div>
-    </div>
+        <div class="d-flex justify-content-center">
+            <h1 class="display-2 fw-bold text-center">Benvenuti in Presto</h1>
+        </div>
         
 
         <!-- sezione CATEGORIE -->
@@ -123,54 +123,48 @@
             </div>
         </div> -->
 
-
+            <hr>
 
         <!-- ULTIMI 5 ANNUNCI -->
-        <div class="container">
+        <div class="container mt-5 py-5">
             <div class="row justify-content-center">
                 <div class="col">
-                    <h1 class="display-2 fw-bold text-center">Ultimi annunci</h1>
+                    <h2 class=" display-5 fw-bold text-center">Ultimi annunci</h2>
                 </div>
             </div>
+        </div>
+        
+        
         
             @foreach ($announcements as $announcement)
-            <div class="row justify-content-center mb-5 mt-5">
-                <div class="col">
-                    <div class="cardcontainer">
-                        <div class="">
-                            {{ $announcement->title }}
+                        <div class="container-fluid mb-2">
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <div class="category-card">
+                                        <i>{{ $announcement->title }}</i>
+                                        <p>
+                                            <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt="">
+                                        </p>
+                                        <div class="category-details">
+                                            <ul>
+                                                <strong>Category:<a class="text-white" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
+                                                <li>{{ $announcement->description }}</li>
+                                                <li>{{ $announcement->price }}$</li>
+                                                <li>{{ $announcement->created_at->format('d/m/Y') }}</li>
+                                                <li>inserito da: {{ $announcement->user->name}}</li>
+                                            </ul>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p>
-                                <img src="https://via.placeholder.com/300x150.png" class="rounded float-right" alt="">
-                                {{ $announcement->description }}
-    
-                            </p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                           
-                            <strong>Category:<a href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
-                           
-                            <i>{{$announcement->price}}$</i>
-                            <i>{{ $announcement->created_at->format('d/m/Y') }} - </i>
-
-                            
-                            <p>{{ $announcement->user->name}}</p>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
             @endforeach
-        </div>
+                    
+                   
+                                    
+                                      
+                       
+                                    
   
-
-
-
-
-
-
-
 
 </x-layout>

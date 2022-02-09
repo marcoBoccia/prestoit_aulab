@@ -11295,9 +11295,9 @@ textarea.form-control-lg {
 
 /* SEZIONE CATEGORIE */
 
-/* .category-card{
+ .category-card{
 
-    border-top: solid 8px var(--main-light);
+    border-top: solid 8px red;
 
     position: relative;
 
@@ -11316,7 +11316,7 @@ textarea.form-control-lg {
 
     position: absolute;
 
-    background: linear-gradient(to right,rgba(153,38,240,0.4),rgba(209,34,227,0.4));
+    background: linear-gradient(to right,rgba(240, 38, 38, 0.4),rgba(227, 57, 34, 0.438));
 
     width: 100%;
 
@@ -11384,6 +11384,11 @@ textarea.form-control-lg {
     background-size: cover;
     background-attachment: fixed;
     min-height: 25vh;
+}
+
+.back{
+    background-image: url(/images/back.jpeg?960d1eba33de6c8ebc897758ebb4621e);
+    background-position-y: bottom;
 }
 
 /* CARDS */

@@ -12,9 +12,9 @@
 
 /* SEZIONE CATEGORIE */
 
-/* .category-card{
+ .category-card{
 
-    border-top: solid 8px var(--main-light);
+    border-top: solid 8px red;
 
     position: relative;
 
@@ -33,7 +33,7 @@
 
     position: absolute;
 
-    background: linear-gradient(to right,rgba(153,38,240,0.4),rgba(209,34,227,0.4));
+    background: linear-gradient(to right,rgba(240, 38, 38, 0.4),rgba(227, 57, 34, 0.438));
 
     width: 100%;
 
@@ -101,6 +101,11 @@
     background-size: cover;
     background-attachment: fixed;
     min-height: 25vh;
+}
+
+.back{
+    background-image: url(../../public/images/back.jpeg);
+    background-position-y: bottom;
 }
 
 /* CARDS */
