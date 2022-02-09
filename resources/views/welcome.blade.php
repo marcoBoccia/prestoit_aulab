@@ -144,7 +144,12 @@
                             <strong>Category:<a href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
                            
                             <i>{{$announcement->price}}$</i>
-                            <i>{{ $announcement->created_at->format('d/m/Y') }} - {{Auth::user()->name}}</i>
+                            <i>{{ $announcement->created_at->format('d/m/Y') }} - </i>
+
+                            
+                            <p>{{ $announcement->user->name}}</p>
+                            
+                            
                         </div>
                     </div>
                 </div>
