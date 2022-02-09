@@ -48,7 +48,7 @@ class MakeUserRevisor extends Command
         $user->is_revisor = true;
         $user->save();
 
-        $this->info('utente {$user->name} é ora un revisore');
+        $this->info("utente $user->name é ora un revisore");
         // return 0;
     }
 }
