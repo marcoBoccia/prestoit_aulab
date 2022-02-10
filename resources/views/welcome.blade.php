@@ -126,14 +126,23 @@
             <hr>
 
 
-        <div class="container border border-danger d-flex flex-column align-items-center">
+{{--         <div class="container border border-danger d-flex flex-column align-items-center">
             <form  method="GET" action="{{route('search')}}">
                 <label for="">cerca annuncio</label>
                 <input type="text" name="q">
                 <button type="submit"  class= "btn btn-primary">cerca</button>
             </form>
-        </div>
+        </div> --}}
 
+        <div class="container d-flex flex-column align-items-center cover">
+            <form method="GET" action="{{route('search')}}" class="flex-form">
+                <label for="from">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+                <input type="text" name="q">
+                <input type="submit" value="Search">
+            </form>
+        </div>
 
 
 
@@ -149,27 +158,27 @@
         
         
             @foreach ($announcements as $announcement)
-                        <div class="container-fluid mb-2">
-                            <div class="row justify-content-center">
-                                <div class="col-6">
-                                    <div class="category-card">
-                                        <i>{{ $announcement->title }}</i>
-                                        <p>
-                                            <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt="">
-                                        </p>
-                                        <div class="category-details">
-                                            <ul>
-                                                <strong>Category:<a class="text-white" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
-                                                <li>{{ $announcement->description }}</li>
-                                                <li>{{ $announcement->price }}$</li>
-                                                <li>{{ $announcement->created_at->format('d/m/Y') }}</li>
-                                                <li>inserito da: {{ $announcement->user->name}}</li>
-                                            </ul>
-                                        </div>
-                                    </div> 
+                <div class="container-fluid mb-2">
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <div class="category-card">
+                                <i>{{ $announcement->title }}</i>
+                                <p>
+                                    <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt="">
+                                </p>
+                                <div class="category-details">
+                                    <ul>
+                                        <strong>Category:<a class="text-white" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
+                                        <li>{{ $announcement->description }}</li>
+                                        <li>{{ $announcement->price }}$</li>
+                                        <li>{{ $announcement->created_at->format('d/m/Y') }}</li>
+                                        <li>inserito da: {{ $announcement->user->name}}</li>
+                                    </ul>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
+                    </div>
+                </div>
             @endforeach
                     
                    

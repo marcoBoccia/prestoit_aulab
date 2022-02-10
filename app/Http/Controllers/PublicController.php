@@ -11,7 +11,7 @@ class PublicController extends Controller
 {
     public function welcome(){
 
-        $announcements = AnnouncementModel::where('is_accepted',true)->orderBy('created_at','desc')->take(5)->get();
+        $announcements = AnnouncementModel::where('is_accepted',true)->orderBy('created_at','desc')->take(4)->get();
         $categories = Category::all();
         return view("welcome", compact('announcements'));
 

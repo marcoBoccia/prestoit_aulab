@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg mynavbar sticky-top">
+<nav class="navbar navbar-expand-lg mynavbar">
   <div class="container-fluid">
   <a class="navbar-brand nav-color" href="{{route("welcome")}}">Presto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,8 +10,6 @@
               <li class="nav-item">
                   <a class="nav-link active nav-color" aria-current="page" href="{{route("welcome")}}">Home</a>
               </li>
-
-              
 
 
 

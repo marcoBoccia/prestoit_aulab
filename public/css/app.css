@@ -11391,6 +11391,56 @@ textarea.form-control-lg {
     background-position-y: bottom;
 }
 
+.cover  {
+
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-align: center;
+}
+
+.flex-form input [type="text"]{
+    width: 500px;
+}
+
+.flex-form input[type="submit"] {
+    background: #ef3f5a;
+    border: 1px solid #ef3f5a;
+    color: #fff;
+    padding: 0 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: absolute;
+    right: 0;
+    width: 160px;
+}
+  
+.flex-form input[type="submit"]:hover {
+    background: #d73851;
+    border: 1px solid #d73851;
+}
+  
+.flex-form {
+    display: flex;
+    z-index: 10;
+    width: 700px;
+    position: relative;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+}
+  
+.flex-form > * {
+    border: 0;
+    padding: 0 0 0 10px;
+    background: #fff;
+    line-height: 50px;
+    font-size: 1rem;
+    border-radius: 0;
+    outline: 0;
+    -webkit-appearance: none;
+}
+  
 /* CARDS */
 
 .cardcontainer {
@@ -11415,6 +11465,32 @@ textarea.form-control-lg {
     margin-bottom: 15px;
     filter: grayscale(100%);
     transition: all 0.4s ease-in-out;
+}
+
+/* FORM */
+
+/* .header-form {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(var(--lighter-col), var(--dark-color));
+}
+
+.form {
+
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.413);
+    padding: 20px 30px;
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+    position: relative;
+} */
+
+.form {
+    width: 500px;
+    height: 50vh;
+    background-color: grey;
+    border-radius: 25px;
 }
 
 /* BUTTON */
@@ -11455,6 +11531,45 @@ textarea.form-control-lg {
 }
   
 .button-24:active {
+    opacity: .5;
+}
+
+.button-24bis {
+    background: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: red;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    text-decoration: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+}
+
+.button-24bis:hover,
+.button-24bis:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: black;
+}
+  
+.button-24bis:active {
     opacity: .5;
 }
 
