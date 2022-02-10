@@ -36,3 +36,7 @@ Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor_in
 Route::post('/revisor/announcements/{id}/accept', [RevisorController::class,'accept'])->name('revisor_accepted');
 
 Route::post('/revisor/announcements/{id}/reject' , [RevisorController::class, 'reject'])->name('revisor_reject');
+
+
+// cerca
+Route::get('/search', [PublicController::class, 'search'])->name("search");

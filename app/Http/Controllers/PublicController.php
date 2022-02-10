@@ -17,13 +17,26 @@ class PublicController extends Controller
 
     }
 
-    public function announcementsByCategory($name, $category_id){
+    // public function announcementsByCategory($name, $category_id){
 
-        $category = Category::find($category_id);
-        $announcements=$category->announcements()->orderBy('created_at','desc')->paginate(5);
-        dd('ciaooooooo');
+    //     $category = Category::find($category_id);
+    //     $announcements=$category->announcements()->orderBy('created_at','desc')->paginate(5);
+    //     dd('ciaooooooo');
 
-        return view('annoucements', compact('category', 'announcements'));
+    //     return view('annoucements', compact('category', 'announcements'));
+    // }
+
+
+
+    public function search(Request $req){
+        $q = $req->input('q');
+        
+        $announcements = AnnouncementModel::search($q)->where('is_accepted', true)->get();
+
+
+    return view('search_results', compact('announcements','q'));
     }
+
+
 
 }

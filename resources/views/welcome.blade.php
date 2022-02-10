@@ -125,6 +125,18 @@
 
             <hr>
 
+
+        <div class="container border border-danger d-flex flex-column align-items-center">
+            <form  method="GET" action="{{route('search')}}">
+                <label for="">cerca annuncio</label>
+                <input type="text" name="q">
+                <button type="submit"  class= "btn btn-primary">cerca</button>
+            </form>
+        </div>
+
+
+
+
         <!-- ULTIMI 5 ANNUNCI -->
         <div class="container mt-5 py-5">
             <div class="row justify-content-center">

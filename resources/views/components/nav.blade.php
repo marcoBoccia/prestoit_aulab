@@ -10,6 +10,11 @@
               <li class="nav-item">
                   <a class="nav-link active nav-color" aria-current="page" href="{{route("welcome")}}">Home</a>
               </li>
+
+              
+
+
+
             @guest
               <li class="nav-item">
                   <a class="nav-link active nav-color" href="{{route("login")}}">Login</a>
