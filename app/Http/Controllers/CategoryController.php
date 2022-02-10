@@ -15,9 +15,12 @@ class CategoryController extends Controller
      */
     public function index($id)
     { 
-        $announcements= AnnouncementModel::where('category_id', $id)->get();
-        
-        // dd($announcements);
+        // $announcements= AnnouncementModel::where('category_id', $id)->get();
+        // $announcements = AnnouncementModel::where('is_accepted',true)->orderBy('created_at','desc')->take(5)->get();
+        // $announcements = AnnouncementModel::find($id);
+        // $announcements = AnnouncementModel::find($id);
+        $announcements = Category::find($id)->announcements()->where('is_accepted',true)->orderBy('created_at','desc')->take(3)->get();
+        // dd($announcements->all());
         return view('category.category_index', compact('announcements'));
     }
 

@@ -11,20 +11,19 @@ class PublicController extends Controller
 {
     public function welcome(){
 
-        $announcements = AnnouncementModel::orderBy('created_at','desc')->take(5)->get();
+        $announcements = AnnouncementModel::where('is_accepted',true)->orderBy('created_at','desc')->take(5)->get();
         $categories = Category::all();
-        return view("welcome", compact('announcements','categories'));
+        return view("welcome", compact('announcements'));
 
     }
 
     public function announcementsByCategory($name, $category_id){
 
         $category = Category::find($category_id);
-        $announcements=$category->announcements()->paginate(5);
+        $announcements=$category->announcements()->orderBy('created_at','desc')->paginate(5);
+        dd('ciaooooooo');
 
         return view('annoucements', compact('category', 'announcements'));
-
-
     }
 
 }
