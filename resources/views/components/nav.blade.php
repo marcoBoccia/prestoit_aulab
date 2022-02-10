@@ -25,6 +25,18 @@
               </li>
               
             @else    
+
+            @if (Auth::user()->is_revisor)
+            
+            <li class="nav-item">
+              <a class="nav-link active nav-color" href="{{route("revisor_index")}}">Revisor Home
+                <span class="badge badge-pill bg-dark text-white">{{\App\Models\AnnouncementModel::ToBeRevisionedCount()}}
+                </span>
+              </a>
+            </li>
+            @endif
+
+
             <li class="nav-item">
                   <a class="nav-link active nav-color" href="{{route("announcement_index")}}">Annunci</a>
               </li>

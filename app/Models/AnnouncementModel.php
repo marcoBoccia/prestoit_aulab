@@ -23,6 +23,10 @@ class AnnouncementModel extends Model
         return $this->belongsTo(User::class);
 
     }
+
+    static public function ToBeRevisionedCount(){
+        return AnnouncementModel::where("is_accepted", null)->count();
+    }
 }
 
 

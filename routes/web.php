@@ -31,5 +31,8 @@ Route::get('/annunci/dettaglio/{a}' , [AnnouncementModelController::class , "sho
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category_index');
 
 // !ROTTE RELATIVE AI REVISORI
-Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.index');
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor_index');
 
+Route::post('/revisor/announcements/{id}/accept', [RevisorController::class,'accept'])->name('revisor_accepted');
+
+Route::post('/revisor/announcements/{id}/reject' , [RevisorController::class, 'reject'])->name('revisor_reject');
