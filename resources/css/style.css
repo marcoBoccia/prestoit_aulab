@@ -122,8 +122,10 @@
     -webkit-box-align: center;
 }
 
-.flex-form input [type="text"]{
-    width: 500px;
+/* {{-- FORM PER INSERIMENTO ANNUNCI --}} */
+
+/* .flex-form input [type="text"]{
+    display: flex;
 }
 
 .flex-form input[type="submit"] {
@@ -147,14 +149,14 @@
   
 .flex-form {
     display: -webkit-box;
-    display: flex;
-    z-index: 10;
-    width: 700px;
-    position: relative;
-    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
-}
+    /* display: flex; */
+    /* z-index: 10; */
+    /* width: 700px; */
+    /* position: relative; */
+    /* box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3); */
+/* } */
   
-.flex-form > * {
+/* .flex-form > * {
     border: 0;
     padding: 0 0 0 10px;
     background: #fff;
@@ -163,8 +165,8 @@
     border-radius: 0;
     outline: 0;
     -webkit-appearance: none;
-}
-  
+} */
+   */
 /* CARDS */
 
 .cardcontainer {

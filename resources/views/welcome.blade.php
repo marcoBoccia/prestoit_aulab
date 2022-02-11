@@ -134,12 +134,14 @@
             </form>
         </div> --}}
 
-        <div class="container d-flex flex-column align-items-center cover">
-            <form method="GET" action="{{route('search')}}" class="flex-form">
+
+        {{-- FORM PER INSERIMENTO ANNUNCI --}}
+        <div class="container d-flex flex-column align-items-center cover bg-danger">
+            <form method="GET" action="{{route('search')}}">
                 <label for="from">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </label>
-                <input type="text" name="q">
+                <input class="flex-forms" type="text" name="q">
                 <input type="submit" value="Search">
             </form>
         </div>

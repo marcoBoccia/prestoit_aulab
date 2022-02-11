@@ -11401,8 +11401,10 @@ textarea.form-control-lg {
     -webkit-box-align: center;
 }
 
-.flex-form input [type="text"]{
-    width: 500px;
+/* {{-- FORM PER INSERIMENTO ANNUNCI --}} */
+
+/* .flex-form input [type="text"]{
+    display: flex;
 }
 
 .flex-form input[type="submit"] {
@@ -11411,6 +11413,8 @@ textarea.form-control-lg {
     color: #fff;
     padding: 0 30px;
     cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
     transition: all 0.2s;
     position: absolute;
     right: 0;
@@ -11423,14 +11427,15 @@ textarea.form-control-lg {
 }
   
 .flex-form {
-    display: flex;
-    z-index: 10;
-    width: 700px;
-    position: relative;
-    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
-}
+    display: -webkit-box;
+    /* display: flex; */
+    /* z-index: 10; */
+    /* width: 700px; */
+    /* position: relative; */
+    /* box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3); */
+/* } */
   
-.flex-form > * {
+/* .flex-form > * {
     border: 0;
     padding: 0 0 0 10px;
     background: #fff;
@@ -11439,8 +11444,8 @@ textarea.form-control-lg {
     border-radius: 0;
     outline: 0;
     -webkit-appearance: none;
-}
-  
+} */
+   */
 /* CARDS */
 
 .cardcontainer {
