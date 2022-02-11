@@ -3202,7 +3202,46 @@ function withinMaxClamp(min, value, max) {
 /*!********************************************!*\
   !*** ./resources/js/announcementImages.js ***!
   \********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+var _require = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"),
+    data = _require.data;
+
+$(function () {
+  if ($("#drophere").length > 0) {
+    alert('ci sono');
+  }
+});
+$(function () {
+  if ($("#drophere").length > 0) {
+    var csrfToken = $('meta[name = "csrf-token"]').attr('content');
+    var uniqueSecret = $('input[name = "uniqueSecret"]').attr('value');
+    var myDropzone = new Dropzone('#drophere', {
+      url: '/announcement/images/upload',
+      params: {
+        _token: csrfToken,
+        uniqueSecret: uniqueSecret
+      },
+      addRemoveLinks: true,
+      init: function init() {
+        $.ajax({
+          tipe: 'GET',
+          url: '/announcement/images',
+          data: {
+            uniqueSecret: uniqueSecret
+          },
+          dataType: 'Json'
+        }).done(function (data) {
+          $.each(data, function (key, value) {
+            var file = {
+              serverId: value.id
+            };
+          });
+        });
+      }
+    });
+  }
+}); // ! CON JAVASCRIPT VANILLA
 
 /* let  drop = document.querySelector('#dropzone');
 
@@ -3231,9 +3270,9 @@ function nuovoAnnuncio(){
 nuovoAnnuncio();
 
  */
-$(function () {
-  alert('ci sono');
-});
+// $(function(){
+//     alert('ci sono');
+// })
 
 /***/ }),
 
@@ -3245,7 +3284,7 @@ $(function () {
 
 __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 
-document.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
+window.Dropzone = __webpack_require__(/*! dropzone */ "./node_modules/dropzone/dist/dropzone.js");
 Dropzone.autoDiscover = false;
 
 __webpack_require__(/*! ./announcementImages */ "./resources/js/announcementImages.js");

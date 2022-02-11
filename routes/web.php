@@ -26,6 +26,7 @@ Route::get('/annunci' , [AnnouncementModelController::class , "index"])->name("a
 Route::get('/annunci/form' , [AnnouncementModelController::class , "create"])->name("announcement_form");
 Route::post('/annunci/submit' , [AnnouncementModelController::class , "store"])->name("announcement_submit");
 Route::get('/annunci/dettaglio/{a}' , [AnnouncementModelController::class , "show"])->name("announcement_detail");
+Route::post('/announcement/images/upload',[AnnouncementModelController::class,"uploadImage"])->name("announcement.image.upload");
 
 //! ROTTE RELATIVE ALLE CATEGORIE
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category_index');

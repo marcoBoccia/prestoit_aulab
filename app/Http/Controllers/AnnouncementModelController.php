@@ -48,7 +48,7 @@ class AnnouncementModelController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+         $categories = Category::all();
          $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16 , 36);
 
         return view('announcement.announcement_form', compact('categories', 'uniqueSecret'));
@@ -85,6 +85,10 @@ class AnnouncementModelController extends Controller
         ]);
             //  dd($request->uniqueSecret);
         return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');
+    }
+
+    public function uploadImage(Request $request){
+        dd($request->input());
     }
 
     /**
