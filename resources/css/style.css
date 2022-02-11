@@ -70,7 +70,7 @@
 .category-card:hover img{
 
     transform: scale(1.5);
-} */
+}
 
 /* NAVBAR */
 
@@ -166,7 +166,7 @@
     outline: 0;
     -webkit-appearance: none;
 } */
-   */
+   
 /* CARDS */
 
 .cardcontainer {

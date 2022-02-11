@@ -31,6 +31,16 @@ class AnnouncementModelController extends Controller
         return view('announcement.announcement_index', compact('announcements'));
     }
 
+
+    // public function newAnnouncement(){
+       
+    //     return view('', compact('uniqueSecret'));
+    // }
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,8 +49,9 @@ class AnnouncementModelController extends Controller
     public function create()
     {
         $categories = Category::all();
+         $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16 , 36);
 
-        return view('announcement.announcement_form', compact('categories'));
+        return view('announcement.announcement_form', compact('categories', 'uniqueSecret'));
     }
 
     /**
@@ -59,7 +70,7 @@ class AnnouncementModelController extends Controller
         //     'category_id' => $request->category,
         //     'price'=>$request->price,    
         // ]);
-
+ 
         $user=Auth::user();
         $user->announcements()->create([
             
@@ -67,9 +78,12 @@ class AnnouncementModelController extends Controller
                 'title'=>$request->title,   
                 'price'=>$request->price,   
                 'category_id'=>$request->category, 
-            
-        ]);
 
+                'uniqueSecret'=>$request->uniqueSecret,
+              
+           
+        ]);
+            //  dd($request->uniqueSecret);
         return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');
     }
 
