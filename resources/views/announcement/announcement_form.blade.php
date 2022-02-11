@@ -1,10 +1,10 @@
  <x-layout>
-     <header class="header-form d-flex justify-content-center align-items-center"> 
-         
+     <header class="header-form d-flex justify-content-center align-items-center">
+
          <form class="form" method="POST" action="{{route('announcement_submit')}}">
-             
+
              @csrf
-            
+
              <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
              <div class="mb-3">
                  <h5> QUi{{$uniqueSecret}}</h5>
@@ -28,6 +28,21 @@
                      </option>
                      @endforeach
                  </select>
+             </div>
+             <div class='form-group row'>
+                 <label form="images" class="col-md-12 col-form-label text-md-right">Immagini
+                 </label>
+                 <div class="col-md-12">
+
+
+                 <div class="dropzone" id="dropzone"></div>
+
+                 @error('images')
+                 <span class="invalid-feedback" role="alert">
+                     <strong>({$message)}</strong>
+                 </span>
+                 @enderror
+             </div>
              </div>
              <button type="submit" class="button-24">Submit</button>
          </form>
