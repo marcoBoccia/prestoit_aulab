@@ -1,4 +1,5 @@
-let  drop = document.querySelector('#dropzone');
+/* let  drop = document.querySelector('#dropzone');
+
 function nuovoAnnuncio(){
     if(drop != null){
         let uniqueSecret = document.querySelector('#uniqueSecret').value;
@@ -23,3 +24,8 @@ function nuovoAnnuncio(){
 
 nuovoAnnuncio();
 
+ */
+
+$(function(){
+    alert('ci sono');
+})
