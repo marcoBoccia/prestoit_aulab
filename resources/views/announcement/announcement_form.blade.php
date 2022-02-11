@@ -4,8 +4,8 @@
          <form class="form" method="POST" action="{{route('announcement_submit')}}">
 
              @csrf
-
-             <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
+            
+             <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}" id="uniqueSecret">
              <div class="mb-3">
                  <h5> QUi{{$uniqueSecret}}</h5>
                  <label for="exampleInputEmail1" class="form-label text-white">Inserisci il titolo</label>
