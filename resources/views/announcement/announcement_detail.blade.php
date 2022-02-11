@@ -1,8 +1,8 @@
 <x-layout>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
 
-            <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
+            <div class="col-6 my-3 d-flex ">
                 <div class="cardcontainer" style="width: 18rem;">
                     <div class="">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
