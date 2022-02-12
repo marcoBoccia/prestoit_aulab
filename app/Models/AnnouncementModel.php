@@ -12,9 +12,6 @@ class AnnouncementModel extends Model
     use HasFactory;
     use Searchable;
 
-
-
-
     protected $fillable =[
         'title', 'description',"category_id", "price","user_id",
         
@@ -40,6 +37,10 @@ class AnnouncementModel extends Model
     public function user(){
         return $this->belongsTo(User::class);
 
+    }
+
+    public function images(){
+        return $this->hasMany(AnnouncementImage::class);
     }
 
     static public function ToBeRevisionedCount(){

@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use App\Models\AnnouncementImage;
 use App\Models\AnnouncementModel;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class AnnouncementModelController extends Controller
 {
@@ -71,19 +74,38 @@ class AnnouncementModelController extends Controller
         //     'price'=>$request->price,    
         // ]);
  
-        $user=Auth::user();
-        $user->announcements()->create([
+        $announcement = Auth::user()->announcements()->create([
             
                 'description'=>$request->description,
                 'title'=>$request->title,   
                 'price'=>$request->price,   
                 'category_id'=>$request->category, 
-
-                'uniqueSecret'=>$request->uniqueSecret,
-              
-           
+                
         ]);
-            //  dd($request->uniqueSecret);
+
+                $uniqueSecret=$request->input('uniqueSecret');
+                $images = session()->get("images.{$uniqueSecret}");
+                //$images = array_diff($images);
+
+                //dd($images);
+                
+                foreach ($images as $image) {
+                $i = new AnnouncementImage();
+
+                $fileName = basename($image);
+                //dd($fileName);
+                //$file = Storage::move($image, "public/announcements/{$announcement->id}/{$fileName}");
+                $file = "public/announcements/{$announcement->id}/{$fileName}";
+
+                Storage::move($image, $file);
+                $i->file = $file;
+                $i->announcement_id = $announcement->id;
+
+                $i->save();
+            }
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+            
         return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');
     }
 
