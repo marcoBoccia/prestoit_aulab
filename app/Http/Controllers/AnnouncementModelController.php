@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AnnouncementRequest;
 use App\Models\Category;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
 use App\Models\AnnouncementModel;
+use Illuminate\Container\RewindableGenerator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -40,19 +42,19 @@ class AnnouncementModelController extends Controller
     //     return view('', compact('uniqueSecret'));
     // }
 
-
-
-
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-         $categories = Category::all();
-         $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16 , 36);
+        //dd($request->all());
+        $categories = Category::all();
+        $uniqueSecret = $request->old(
+            'uniqueSecret',
+            base_convert(sha1(uniqid(mt_rand())), 16 , 36)
+        );
 
         return view('announcement.announcement_form', compact('categories', 'uniqueSecret'));
     }
@@ -63,8 +65,9 @@ class AnnouncementModelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnnouncementRequest $request)
     {
+        
         // dd($request->all());
         // $announcement=AnnouncementModel::create([
         //     "user_id"
@@ -108,7 +111,7 @@ class AnnouncementModelController extends Controller
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
             
-        return redirect(route('announcement_index'))->with('status', 'Prodotto aggiunto correttamente');
+        return redirect(route('announcement_form'))->with('status', 'Prodotto aggiunto correttamente');
     }
 
     public function uploadImage(Request $request){
@@ -127,12 +130,36 @@ class AnnouncementModelController extends Controller
 
     public function removeImage(Request $request){
         $uniqueSecret = $request->input('uniqueSecret');
+
         $fileName = $request->input('id');
+
         session()->push("removedImages.{$uniqueSecret}" , $fileName);
+
         Storage::delete($fileName);
+
         return response()->json('ok');
     }
 
+    public function getImage(Request $request){
+
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $images = session()->get("images.{$uniqueSecret}" , []);
+        $removedImages = session()->get("removedImages.{$uniqueSecret}" , []);
+
+        $images = array_diff($images , $removedImages);
+
+        $data = [];
+
+        foreach ($images as $image) {
+            $data[] = [
+                'id' => $image,
+                'src' => Storage::url($image)
+            ];
+        }
+
+        return response()->json($data);
+    }
     /**
      * Display the specified resource.
      *

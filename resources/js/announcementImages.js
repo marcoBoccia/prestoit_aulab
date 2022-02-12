@@ -75,24 +75,26 @@ $(function () {
             addRemoveLinks: true,
 
 
+            init: function() {
+                 $.ajax({
+                     type:'GET',
+                     url:'/announcement/images',
+                     data:{
+                         uniqueSecret:uniqueSecret
+                     },
+                     dataType:'Json'
+                 }).done(function(data){
+                     $.each(data,function(key,value){
+                         let file = {
+                             serverId:value.id
+                         }
 
+                         myDropzone.options.addedfile.call(myDropzone, file);
+                         myDropzone.options.thumbnail.call(myDropzone, file, value.src);
 
-            // init:function() {
-            //     $.ajax({
-            //         type:'GET',
-            //         url:'/announcement/images',
-            //         data:{
-            //             uniqueSecret:uniqueSecret
-            //         },
-            //         dataType:'Json'
-            //     }).done(function(data){
-            //         $.each(data,function(key,value){
-            //             let file = {
-            //                 serverId:value.id
-            //             }
-            //         })
-            //     })
-            // }
+                     })
+                 })
+             }
 
         });
 
