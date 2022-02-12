@@ -88,7 +88,15 @@ class AnnouncementModelController extends Controller
     }
 
     public function uploadImage(Request $request){
-        dd($request->input());
+        
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        session()->push("images.{$uniqueSecret}" , $fileName);
+
+        return response()->json(session()->get("images.{$uniqueSecret}"));
+
     }
 
     /**
