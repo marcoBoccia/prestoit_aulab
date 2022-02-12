@@ -126,16 +126,16 @@
             <hr>
 
 
-{{--         <div class="container border border-danger d-flex flex-column align-items-center">
+          <!-- <div class="container border border-danger d-flex flex-column align-items-center">
             <form  method="GET" action="{{route('search')}}">
                 <label for="">cerca annuncio</label>
                 <input type="text" name="q">
                 <button type="submit"  class= "btn btn-primary">cerca</button>
             </form>
-        </div> --}}
+        </div>  -->
 
 
-        {{-- FORM PER INSERIMENTO ANNUNCI --}}
+        <!-- form per ricerca annuncio -->
         <div class="container d-flex flex-column align-items-center cover bg-danger">
             <form method="GET" action="{{route('search')}}">
                 <label for="from">
@@ -164,10 +164,27 @@
                     <div class="row justify-content-center">
                         <div class="col-3">
                             <div class="category-card">
-                                <i>{{ $announcement->title }}</i>
-                                <p>
+                                <h4 style="color:black">{{ $announcement->title }}</h4>
+                                
                                     <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt="">
-                                </p>
+
+
+                                    @if($announcement->image != "[]")
+                    
+                                        @foreach($announcement->image as $image)
+                                            
+                                            <img src="{{ Storage::url($image->file) }}" alt="immagine prodotto">
+
+                                            
+
+                                        @endforeach
+                                        
+                                    @else
+                                        <h1>fuck</h1>
+                                        <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
+
+                                    @endif
+                                
                                 <div class="category-details">
                                     <ul>
                                         <strong>Category:<a class="text-white" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>

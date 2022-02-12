@@ -16,7 +16,7 @@
                                 <h3>Utente</h3>
                             </div>
                             <div class="col-md-10">
-                                # {{$announcement->user->id}},
+                                {{$announcement->user->id}},
                                 {{$announcement->user->name}},
                                 {{$announcement->user->email}},
                             </div>
@@ -35,7 +35,7 @@
                             <div class="col-md-2"><h3>Immagini</h3></div>
                             <div class="col-md-10"></div>
                            
-                            {{-- @foreach($announcement->images as $image)
+                            @foreach($announcement->image as $image)
                             <div class="row mb-2">
                                 <div class="col-md-4">
                                     <img src="{{Storage::url($image->file)}}" class="d-block w-100" alt="...">
@@ -46,7 +46,7 @@
                                     {{Storage::url($image->file)}} <br>
                                 </div>
                             </div>
-                            @endforeach --}}
+                            @endforeach
                             
                         </div>
                     </div>

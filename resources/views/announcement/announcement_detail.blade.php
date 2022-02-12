@@ -7,15 +7,24 @@
                     <div class="">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/300x150.png" alt="" class="img-fluid">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x150.png" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x150.png" class="d-block w-100" alt="...">
-                                </div>
+                                
+                                
+                                
+                                @if($a->image != "[]")
+                                    
+                                    @foreach($a->image as $image)
+                                        
+                                    
+                                    <div class="carousel-item active">
+                                        <img src="{{ Storage::url($image->file) }}" alt="immagine prodotto">
+                                    </div>
+                                    @endforeach
+                                    
+                                @else
+                                <h1>fuck</h1>
+                                <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
+
+                                @endif
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -39,7 +39,7 @@ class AnnouncementModel extends Model
 
     }
 
-    public function images(){
+    public function image(){
         return $this->hasMany(AnnouncementImage::class);
     }
 

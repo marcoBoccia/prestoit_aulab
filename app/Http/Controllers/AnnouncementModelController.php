@@ -104,7 +104,7 @@ class AnnouncementModelController extends Controller
 
                 Storage::move($image, $file);
                 $i->file = $file;
-                $i->announcement_id = $announcement->id;
+                $i->announcement_model_id = $announcement->id;
 
                 $i->save();
             }

@@ -18,8 +18,8 @@ class CreateAnnouncementImagesTable extends Migration
 
             $table->string('file');
 
-            $table->unsignedBigInteger("announcement_id");
-            $table->foreign('announcement_id')->references('id')->on('announcement_models');
+            $table->unsignedBigInteger("announcement_model_id");
+            $table->foreign('announcement_model_id')->references('id')->on('announcement_models');
 
             $table->timestamps();
         });
