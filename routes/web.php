@@ -33,6 +33,8 @@ Route::get('/annunci/dettaglio/{a}' , [AnnouncementModelController::class , "sho
 //!ROTTE RELATIVE ALLE IMMAGINI DEGLI ANNUNCI
 Route::post('/announcement/images/upload',[AnnouncementModelController::class,"uploadImage"])->name("announcement.image.upload");
 
+Route::delete('/announcement/images/remove',[AnnouncementModelController::class,"removeImage"])->name("announcement.image.remove");
+
 //! ROTTE RELATIVE ALLE CATEGORIE
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category_index');
 

@@ -84,9 +84,11 @@ class AnnouncementModelController extends Controller
         ]);
 
                 $uniqueSecret=$request->input('uniqueSecret');
-                $images = session()->get("images.{$uniqueSecret}");
-                //$images = array_diff($images);
-
+                $images = session()->get("images.{$uniqueSecret}", []);
+                // dd($images);
+                $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+                $images = array_diff($images, $removedImages);
+               
                 //dd($images);
                 
                 foreach ($images as $image) {
@@ -117,8 +119,18 @@ class AnnouncementModelController extends Controller
 
         session()->push("images.{$uniqueSecret}" , $fileName);
 
-        return response()->json(session()->get("images.{$uniqueSecret}"));
+        return response()->json([
+            'id'=>$fileName,
+        ]);
 
+    }
+
+    public function removeImage(Request $request){
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->input('id');
+        session()->push("removedImages.{$uniqueSecret}" , $fileName);
+        Storage::delete($fileName);
+        return response()->json('ok');
     }
 
     /**
