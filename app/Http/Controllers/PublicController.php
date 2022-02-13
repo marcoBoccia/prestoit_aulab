@@ -30,8 +30,8 @@ class PublicController extends Controller
 
     public function search(Request $req){
         $q = $req->input('q');
-        
-        $announcements = AnnouncementModel::search($q)->where('is_accepted', true)->get();
+        //Per usare il paginate al posto di get
+        $announcements = AnnouncementModel::search($q)->where('is_accepted', true)->get(); 
 
 
     return view('search_results', compact('announcements','q'));

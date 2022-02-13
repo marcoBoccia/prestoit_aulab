@@ -26,6 +26,10 @@
                 </div>
             </div>
 @endforeach
+
+
+<!-- MEtodo PAginator -->
+<!-- $announcements->links -->
                     
 
 
