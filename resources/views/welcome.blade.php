@@ -166,7 +166,7 @@
                             <div class="category-card">
                                 <h4 style="color:black">{{ $announcement->title }}</h4>
                                 
-                                    <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt="">
+                                    <!-- <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt=""> -->
 
 
                                     @if($announcement->image != "[]")
