@@ -35,10 +35,10 @@
                             <div class="col-md-2"><h3>Immagini</h3></div>
                             <div class="col-md-10"></div>
                            
-                            @foreach($announcement->image as $image)
+                            @foreach($announcement->images as $image)
                             <div class="row mb-2">
                                 <div class="col-md-4">
-                                    <img src="{{Storage::url($image->file)}}" class="d-block w-100" alt="...">
+                                    <img src="{{ $image->getUrl(300,150) }}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     {{$image->id}} <br>

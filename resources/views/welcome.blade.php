@@ -171,7 +171,7 @@
 
                                     @if($announcement->image != "[]")
                     
-                                        @foreach($announcement->image as $image)
+                                        @foreach($announcement->images as $image)
                                             
                                             <img src="{{ Storage::url($image->file) }}" alt="immagine prodotto">
 

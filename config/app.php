@@ -161,6 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
         
         /*
          * Package Service Providers...
@@ -176,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
         Laravel\Scout\ScoutServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
 
     ],

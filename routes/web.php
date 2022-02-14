@@ -35,7 +35,7 @@ Route::post('/announcement/images/upload',[AnnouncementModelController::class,"u
 
 Route::delete('/announcement/images/remove',[AnnouncementModelController::class,"removeImage"])->name("announcement.image.remove");
 
-Route::get('/announcement/images' , [AnnouncementModelController::class , "getImage"])->name("announcement.image");
+Route::get('/announcement/images' , [AnnouncementModelController::class , "getImages"])->name("announcement.image");
 
 //! ROTTE RELATIVE ALLE CATEGORIE
 Route::get('/category/{id}', [CategoryController::class, 'index'])->name('category_index');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AnnouncementRequest;
+use App\Jobs\ResizeImage;
 use App\Models\Category;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -76,34 +77,39 @@ class AnnouncementModelController extends Controller
         //     'category_id' => $request->category,
         //     'price'=>$request->price,    
         // ]);
- 
+        
+        
+        //dd($images);
+        
+        
         $announcement = Auth::user()->announcements()->create([
             
-                'description'=>$request->description,
-                'title'=>$request->title,   
-                'price'=>$request->price,   
-                'category_id'=>$request->category, 
-                
+            'description'=>$request->description,
+            'title'=>$request->title,   
+            'price'=>$request->price,   
+            'category_id'=>$request->category, 
+            
         ]);
-
-                $uniqueSecret=$request->input('uniqueSecret');
-                $images = session()->get("images.{$uniqueSecret}", []);
-                // dd($images);
-                $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
-                $images = array_diff($images, $removedImages);
-               
-                //dd($images);
-                
+        $uniqueSecret=$request->input('uniqueSecret');
+        $images = session()->get("images.{$uniqueSecret}", []);
+        // dd($images);
+        $removedImages = session()->get("removedImages.{$uniqueSecret}", []);
+        $images = array_diff($images, $removedImages);
+        // dd($images);
                 foreach ($images as $image) {
                 $i = new AnnouncementImage();
 
                 $fileName = basename($image);
-                //dd($fileName);
                 //$file = Storage::move($image, "public/announcements/{$announcement->id}/{$fileName}");
-                $file = "public/announcements/{$announcement->id}/{$fileName}";
+                $newFileName = "public/announcements/{$announcement->id}/{$fileName}";
+                // dd($fileName);
 
-                Storage::move($image, $file);
-                $i->file = $file;
+                Storage::move($image, $newFileName);
+
+                    dispatch(new ResizeImage($newFileName,300,150));
+                    dispatch(new ResizeImage($newFileName,400,300));
+
+                $i->file = $newFileName;
                 $i->announcement_model_id = $announcement->id;
 
                 $i->save();
@@ -119,6 +125,8 @@ class AnnouncementModelController extends Controller
         $uniqueSecret = $request->input('uniqueSecret');
 
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+        dispatch(new ResizeImage($fileName,120,120));
 
         session()->push("images.{$uniqueSecret}" , $fileName);
 
@@ -140,21 +148,23 @@ class AnnouncementModelController extends Controller
         return response()->json('ok');
     }
 
-    public function getImage(Request $request){
+    public function getImages(Request $request){
 
         $uniqueSecret = $request->input('uniqueSecret');
 
         $images = session()->get("images.{$uniqueSecret}" , []);
+        // dd($images);
         $removedImages = session()->get("removedImages.{$uniqueSecret}" , []);
 
         $images = array_diff($images , $removedImages);
+
 
         $data = [];
 
         foreach ($images as $image) {
             $data[] = [
                 'id' => $image,
-                'src' => Storage::url($image)
+                'src' => AnnouncementImage::getUrlByFilePath($image,120,120)
             ];
         }
 

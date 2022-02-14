@@ -12,7 +12,7 @@
                                 
                                 @if($a->image != "[]")
                                     
-                                    @foreach($a->image as $image)
+                                    @foreach($a->images as $image)
                                         
                                     
                                     <div class="carousel-item active">

@@ -16,10 +16,9 @@
                     
                     @if($a->image != "[]")
                     
-                        @foreach($a->image as $image)
+                        @foreach($a->images as $image)
                             
-                                <img src="{{ Storage::url($image->file) }}" alt="immagine prodotto">
-
+                                <img src="{{ $image->getUrl(300,150) }}" alt="immagine prodotto">
                         @endforeach
                         
                     @else
