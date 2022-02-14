@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <h1 class="display-2 fw-bold text-center">Benvenuti in Presto</h1>
+            <h1 class="display-2 fw-bold text-center">{{__('ui.welcome')}}</h1>
         </div>
         
 

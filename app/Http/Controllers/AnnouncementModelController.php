@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 
+
 class AnnouncementModelController extends Controller
 {
     /**
@@ -107,7 +108,7 @@ class AnnouncementModelController extends Controller
                 Storage::move($image, $newFileName);
 
                     dispatch(new ResizeImage($newFileName,300,150));
-                    dispatch(new ResizeImage($newFileName,400,300));
+                    // dispatch(new ResizeImage($newFileName,400,300));
 
                 $i->file = $newFileName;
                 $i->announcement_model_id = $announcement->id;
