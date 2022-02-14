@@ -27,7 +27,27 @@
               <li class="nav-item">
                   <a class="nav-link active nav-color" href="{{route("announcement_form")}}">Inserisci annunci</a>
               </li>
-              
+              <li class="nav-item">
+                <form action="{{route('locale','it')}}" method="POST">
+                @csrf  
+                <button type="submit" class="nav-link active nav-color" href=""><span class="fi fi-it"></span></button>
+
+                </form>
+                </li>
+                <li class="nav-item">
+                <form action="{{route('locale','gb')}}" method="POST">
+                @csrf  
+                <button type="submit" class="nav-link active nav-color" href=""><span class="fi fi-it"></span></button>
+
+                </form>
+                </li>
+                <li class="nav-item">
+                <form action="{{route('locale','de')}}" method="POST">
+                @csrf  
+                <button type="submit" class="nav-link active nav-color" href=""><span class="fi fi-it"></span></button>
+
+                </form>
+                </li>
             @else    
 
             @if (Auth::user()->is_revisor)

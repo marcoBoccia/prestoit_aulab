@@ -20,6 +20,7 @@ use App\Models\AnnouncementModel;
 
 // ! ROTTA HOMEPAGE
 Route::get('/' , [PublicController::class , "welcome"])->name("welcome");
+Route::post("/locale/{locale}",[PublicController::class,"locale"])->name('locale');
 
 //! ROTTE RELATIVE AGLI ANNUNCI
 Route::get('/annunci' , [AnnouncementModelController::class , "index"])->name("announcement_index");
