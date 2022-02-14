@@ -1,5 +1,5 @@
 
-<div class="container-fluid bg-danger text-white relative no-overflow justify-content-center">
+<div class="container-fluid my-footer text-white relative no-overflow justify-content-center">
     <div class="row px-xl-5 pt-5">
         <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
             <a href="" class="text-decoration-none">

@@ -1,6 +1,6 @@
-
-
-<nav class="navbar navbar-expand-lg mynavbar bg-danger">
+{{-- <header role="banner">
+  <img id="logo-main" src="{{URL::asset('/images/logo1.png')}}" width="50" alt="Logo Thing main logo"> --}}
+<nav class="navbar navbar-expand-lg mynavbar navbar-dark">
   <div class="container-fluid">
   <a class="navbar-brand nav-color" href="{{route("welcome")}}">Presto</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,23 +9,23 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                  <a class="nav-link active nav-color" aria-current="page" href="{{route("welcome")}}">Home</a>
+                  <a class="nav-link active nav-color" aria-current="page" href="{{route("welcome")}}">{{__('ui.home')}}</a>
               </li>
 
 
 
             @guest
               <li class="nav-item">
-                  <a class="nav-link active nav-color" href="{{route("login")}}">Login</a>
+                  <a class="nav-link active nav-color" href="{{route("login")}}">{{__('ui.login')}}</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active nav-color" href="{{route("register")}}">Registrati</a>
+                  <a class="nav-link active nav-color" href="{{route("register")}}">{{__('ui.register')}}</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active nav-color" href="{{route("announcement_index")}}">Annunci</a>
+                  <a class="nav-link active nav-color" href="{{route("announcement_index")}}">{{__('ui.ads')}}</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active nav-color" href="{{route("announcement_form")}}">Inserisci annunci</a>
+                  <a class="nav-link active nav-color" href="{{route("announcement_form")}}">{{__('ui.sell')}}</a>
               </li>
               <li class="nav-item">
                 @include('components._locale', ['lang' => 'it', 'nation' => 'it'])

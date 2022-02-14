@@ -1,5 +1,10 @@
 <?php
 
 return [
-    'welcome' => 'nein nein nein ya',
+    'welcome' => 'Willkommen auf Presto.it',
+    'home' => 'Startseite',
+    'login' => 'Einloggen',
+    'register' => 'Registrieren',
+    'ads' => 'Artikeln',
+    'sell' => 'Verkaufen',
 ];

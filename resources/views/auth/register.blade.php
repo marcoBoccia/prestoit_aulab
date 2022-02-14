@@ -11,26 +11,31 @@
                         </ul>
                     </div>
                 @endif
-                <form method="POST" action="{{route("register")}}">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="name">
+                <div class="form-wrapper" id="wrapper-login">
+                    <div class="content-wrapper" id="content-signin">
+                        <form method="POST" action="{{route("register")}}" class="form-login">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nome</label>
+                                <input type="text" class="input-username" name="name">
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label">Email address</label>
+                              <input type="email" class="input-username" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                            </div>
+                            <div class="mb-3">
+                              <label for="exampleInputPassword1" class="form-label">Password</label>
+                              <input type="password" class="input-password" id="exampleInputPassword1" name="password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Conferma la password</label>
+                                <input type="password" class="input-password" id="exampleInputPassword1" name="password_confirmation">
+                              </div>
+                            <button type="submit" class="btn-login">Submit</button>
+                          </form>
+                          <p class="fs-5">Sei già registrato?<a href="{{route("login")}}">Accedi</a></p>
                     </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Conferma la password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation">
-                      </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
+                </div>
             </div>
         </div>
     </div>

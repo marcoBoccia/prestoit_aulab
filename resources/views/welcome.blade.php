@@ -1,19 +1,38 @@
 <x-layout>
 
-    <div class="container-fluid masthead back">
-        <div class="row justify-content-center">
+    <div class="container-fluid masthead back mt-5">
 
-            @if (session("access.denied.revisor.only"))
-                <div class="alert alert-danger">
-                    {{session("access.denied.revisor.only")}}
+        @if (session("access.denied.revisor.only"))
+            <div class="alert alert-danger">
+                {{session("access.denied.revisor.only")}}
+            </div>
+         @endif
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-md-6">
+                    <h1 class="display-2 fw-bold">{{__('ui.welcome')}}</h1>
+                    <a class="btn button-24" type="submit" href="{{route("announcement_form")}}">Inserisci annuncio</a>
                 </div>
-             @endif
-             
+                <div class="col-12 col-md-6 order-1 order-md-2">
+                    <img class="img-fluid" src="{{URL::asset('/images/onlineshop.png')}}" alt="">
+                  </div>
             </div>
         </div>
-        <div class="d-flex justify-content-center">
-            <h1 class="display-2 fw-bold text-center">{{__('ui.welcome')}}</h1>
-        </div>
+    </div>
+             
+            
+
+
+        
+        {{-- <div class="d-flex drop-shadow">
+            <div class="col-6">
+                <h1 class="display-2 fw-bold text-center">{{__('ui.welcome')}}</h1>
+                <div class="col-md-6 offset-md-5 mb-4">
+                    <button class="btn button-24">Inserisci annuncio</button>
+                </div>
+            </div>
+        </div> --}}
+
         
 
         <!-- sezione CATEGORIE -->
@@ -123,9 +142,6 @@
             </div>
         </div> -->
 
-            <hr>
-
-
           <!-- <div class="container border border-danger d-flex flex-column align-items-center">
             <form  method="GET" action="{{route('search')}}">
                 <label for="">cerca annuncio</label>
@@ -136,7 +152,7 @@
 
 
         <!-- form per ricerca annuncio -->
-        <div class="container d-flex flex-column align-items-center cover bg-danger">
+        <div class="container-fluid d-flex flex-column align-items-center cover mynavbar mt-5">
             <form method="GET" action="{{route('search')}}">
                 <label for="from">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -159,10 +175,10 @@
         
         
         
-            @foreach ($announcements as $announcement)
-                <div class="container-fluid mb-2">
-                    <div class="row justify-content-center">
-                        <div class="col-3">
+        <div class="container-fluid mb-2">
+            <div class="row justify-content-evenly">
+                @foreach ($announcements as $announcement)
+                <div class="col-12 col-md-6 my-3 d-flex">
                             <div class="category-card">
                                 <h4 style="color:black">{{ $announcement->title }}</h4>
                                 
@@ -175,12 +191,10 @@
                                             
                                             <img src="{{ $image->getUrl(300,150) }}" alt="immagine prodotto">
 
-                                            
-
                                         @endforeach
                                         
                                     @else
-                                        <h1>fuck</h1>
+                                        
                                         <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
 
                                     @endif
@@ -196,15 +210,7 @@
                                 </div>
                             </div> 
                         </div>
+                        @endforeach
                     </div>
-                </div>
-            @endforeach
-                    
-                   
-                                    
-                                      
-                       
-                                    
-  
-
-</x-layout>
+                </div>   
+        </x-layout>
