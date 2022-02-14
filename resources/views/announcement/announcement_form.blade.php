@@ -11,7 +11,7 @@
      @endif
 
      <header class="header-form d-flex justify-content-center align-items-center">
-         <form class="form" method="POST" action="{{ route('announcement_submit') }}">
+         <form class="form" method="POST" action="{{ route('announcement_submit') }}" enctype="multipart/form-data">
 
              @csrf
 
