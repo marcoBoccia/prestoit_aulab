@@ -41,9 +41,24 @@
                                     <img src="{{ $image->getUrl(300,150) }}" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="col-md-8">
+                                    Adult 🔞:{{$image->adult}} <br>
+                                    Medical 💉 :{{$image->medical}} <br>
+                                    Spoof 🤬:{{$image->spoof}} <br>
+                                    Violence 👊🏻🩸:{{$image->violence}} <br>
+                                    Racy 👬 👬:{{$image->adult}} <br>
                                     {{$image->id}} <br>
                                     {{$image->file}} <br>
                                     {{Storage::url($image->file)}} <br>
+
+                                    <strong>Labels</strong>
+                                    <ul>
+                                        @if ($image->labels)
+                                          @foreach ($image->labels as $label)
+                                                <li>{{$label}}</li>
+                                          @endforeach
+                                            
+                                        @endif
+                                    </ul>
                                 </div>
                             </div>
                             @endforeach
