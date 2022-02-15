@@ -10,14 +10,14 @@
          </div>
      @endif
 
-     <header class="header-form d-flex justify-content-center align-items-center">
-         <form class="form" method="POST" action="{{ route('announcement_submit') }}" enctype="multipart/form-data">
+     <header class=" d-flex justify-content-center align-items-center ">
+         <form style="margin-top: 3rem; background-color:royalblue;" class="form" method="POST" action="{{ route('announcement_submit') }}" enctype="multipart/form-data">
 
              @csrf
 
              <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}" id="uniqueSecret">
              <div class="mb-3">
-                 <h5> {{ $uniqueSecret }}</h5>
+                 <h5 style="display:none"> {{ $uniqueSecret }}</h5>
                  <label for="exampleInputEmail1" class="form-label text-white">Inserisci il titolo</label>
                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                      name="title" value="{{old('title')}}">
@@ -32,7 +32,7 @@
                  <input type="text" class="form-control" name="price" value="{{old('price')}}">
              </div>
              <div class="mb-3">
-                 <select class="form-select text-danger" name="category" id="category" multiple>
+                 <select class="form-select text-danger" name="category" id="category" >
                      @foreach ($categories as $category)
                          <option value="{{ $category->id }}">
                              {{ $category->name }}

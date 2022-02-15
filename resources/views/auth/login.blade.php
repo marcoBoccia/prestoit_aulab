@@ -1,5 +1,5 @@
 <x-layout>
-   
+    <section class="sfondo">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-6">
@@ -33,5 +33,6 @@
             </div>
         </div>
     </div>
+</section>
 </x-layout>
 

@@ -11285,6 +11285,34 @@ textarea.form-control-lg {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+
+.prova{
+    border-bottom: solid 1px black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+}
+.search1{
+    border-bottom: solid 2px black;
+}
+
+
+
+.search{
+    background-color:var(--main-red);
+    width: 60vh;
+    border-radius: 15px;
+    
+    height: 40px;
+    border: none;
+}
+
+.sfondo{
+    background: url(/images/sfondosito.png?6e09afb600e6006175436e7d8d0f9887);
+    background-size: cover;
+    height: 93vh;
+}
+
 :root {
     --main-color: #e7ecef;
     --main-red: rgb(243, 119, 72);
@@ -11300,7 +11328,7 @@ textarea.form-control-lg {
  .category-card{
 
     border-top: solid 8px var(--main-red);
-    border-bottom: solid 8px var(--main-red);
+    /* border-bottom: solid 8px var(--main-red); */
 
     position: relative;
 
@@ -11424,9 +11452,9 @@ textarea.form-control-lg {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: var(--dark-color);
+    background-color: var(--dark-color);
     backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px); */
+    -webkit-backdrop-filter: blur(12px);
     
 }    
 
@@ -11511,7 +11539,7 @@ textarea.form-control-lg {
     width: 500px;
     height: 650px;
     border-radius: 20px;
-    background: #2F366D;
+    background: #2f366dd8;
     color: #FDF3F8;
     box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
     position: absolute;
@@ -11647,19 +11675,19 @@ textarea.form-control-lg {
     width: 100%;
     border-radius: 15px;
     margin-bottom: 15px;
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
     transition: all 0.4s ease-in-out;
 }
 
 /* FORM */
 
-/* .header-form {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(var(--lighter-col), var(--dark-color));
-}
+ /* .header-form {
+    /* margin: 0;
+    height: 100vh; */
+   /* background-color: var(--main-blue); */
+/* } */
 
-.form {
+/* .form {
 
     background: white;
     border-radius: 30px;
@@ -11673,9 +11701,9 @@ textarea.form-control-lg {
 .form {
     width: 500px;
     height: 50vh;
-    background-color: grey;
-    border-radius: 25px;
-}
+    background-color: blue;
+    border-radius: 5px;
+}  
 
 /* BUTTON */
 

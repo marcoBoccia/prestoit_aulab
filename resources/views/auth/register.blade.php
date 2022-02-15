@@ -1,5 +1,6 @@
 <x-layout>
-    <div class="container">
+    <section class="sfondo">
+    <div class="container ">
         <div class="row justify-content-center">
             <div class="col-6">
                 @if ($errors->any())
@@ -39,4 +40,5 @@
             </div>
         </div>
     </div>
+</section>
 </x-layout>

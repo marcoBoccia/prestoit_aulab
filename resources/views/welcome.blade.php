@@ -24,14 +24,14 @@
 
 
         
-        {{-- <div class="d-flex drop-shadow">
+        <!-- {{-- <div class="d-flex drop-shadow">
             <div class="col-6">
                 <h1 class="display-2 fw-bold text-center">{{__('ui.welcome')}}</h1>
                 <div class="col-md-6 offset-md-5 mb-4">
                     <button class="btn button-24">Inserisci annuncio</button>
                 </div>
             </div>
-        </div> --}}
+        </div> --}} -->
 
         
 
@@ -155,10 +155,15 @@
         <div class="container-fluid d-flex flex-column align-items-center cover mynavbar mt-5">
             <form method="GET" action="{{route('search')}}">
                 <label for="from">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                 
                 </label>
-                <input class="flex-forms" type="text" name="q">
-                <input type="submit" value="Search">
+                <div class="search1">
+                <input class="flex-forms search  " type="text" name="q">
+                <!-- <input  value="Search" > -->
+                <button type="submit" class="button-24"> 
+                    <i class="fa-solid fa-magnifying-glass fs-3"></i>
+                </button>
+            </div>
             </form>
         </div>
 
@@ -180,7 +185,8 @@
                 @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-6 my-3 d-flex">
                             <div class="category-card">
-                                <h4 style="color:black">{{ $announcement->title }}</h4>
+                                <h4 style="color:black">{{ $announcement->title }}</h4> 
+                                <h4 style="color:black"> {{ $announcement->price }}$</h4>
                                 
                                     <!-- <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt=""> -->
 
@@ -199,15 +205,16 @@
 
                                     @endif
                                 
-                                <div class="category-details">
+                                <div class="text-dark">
                                     <ul>
-                                        <strong>Category:<a class="text-white" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
+                                        <strong>Category:<a class="text-dark" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
                                         <li>{{ $announcement->description }}</li>
                                         <li>{{ $announcement->price }}$</li>
                                         <li>{{ $announcement->created_at->format('d/m/Y') }}</li>
                                         <li>inserito da: {{ $announcement->user->name}}</li>
                                     </ul>
                                 </div>
+                                <button class="btn-info btn"><a class="text-dark" href="{{route('announcement_detail', ['a'=>$announcement])}}">Vai al dettaglio</a></button>
                             </div> 
                         </div>
                         @endforeach

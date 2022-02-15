@@ -48,5 +48,3 @@
 </x-layout>
 
 
-
-<img src="https://via.placeholder.com/300x150.png" alt="" class="img-fluid">

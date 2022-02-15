@@ -7,13 +7,14 @@
                 <div class="row justify-content-center">
                     <div class="col-6">
                         <div class="category-card">
-                            
+                            @foreach($announcement->images as $image)
                             <p>
-                                <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt="">
+                                <img src="{{$image->getUrl(300,150) }}" class="rounded float-right img" alt="">
                             </p>
-                            <div class="category-details">
+                            @endforeach
+                            <div class="text-dark">
                                 <ul>
-                                    <strong>Category:<a class="text-white" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
+                                    <strong>Category:<a href="{{route('category_index', ['id'=>$announcement->category->id])}}"> {{ $announcement->category->name }}</a></strong>
                                     <li>{{ $announcement->title }}</li>
                                     <li>{{ $announcement->description }}</li>
                                     <li>{{ $announcement->price }}$</li>
