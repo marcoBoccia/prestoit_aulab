@@ -9,19 +9,20 @@
         </div>
     </div>
     
-    <div class="container py-4">
-        <div class="row justify-content-center">
-            <div class="col-md-12 ">
+    <div class="container py-4" style="border: solid 3px blue;">
+        <div class="row justify-content-center" style="border: solid 3px green;">
+            <div class="col-md-8" style="border: solid 3px red;">
                 <div class="card">
                     <div class="card-header">
                         Annuncio # {{$announcement->id}}
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-2">
+                        <div class="" style="border: solid 3px red;">
+                            <div class="row">
+                            <div class="col-md-6 col-12">
                                 <h3>Utente</h3>
                             </div>
-                            <div class="col-md-10">
+                            <div class="col-md-6 col-12">
                                 {{$announcement->user->id}},
                                 {{$announcement->user->name}},
                                 {{$announcement->user->email}},
@@ -29,37 +30,39 @@
                         </div>
                         
                         <div class="row">
-                            <div class="col-md-2"><h3>Titolo</h3></div>
-                            <div class="col-md-10">{{$announcement->title}}</div>
+                            <div class="col-md-6 col-12"><h3>Titolo</h3></div>
+                            <div class="col-md-6 col-12">{{$announcement->title}}</div>
                         </div>
                         
                         <div class="row">
-                            <div class="col-md-2"><h3>Descrizione</h3></div>
-                            <div class="col-md-10">{{$announcement->description}}</div>
+                            <div class="col-md-6 col-12"><h3>Descrizione</h3></div>
+                            <div class="col-md-6 col-12">{{$announcement->description}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-md-2"><h3>Categoria</h3></div>
-                            <div class="col-md-10">{{$announcement->category->name}}</div>
+                            <div class="col-md-6 col-12"><h3>Categoria</h3></div>
+                            <div class="col-md-6 col-12">{{$announcement->category->name}}</div>
                         </div>
+                        </div>
+                        
                         <div class="row">
-                            <div class="col-md-2"><h3>Immagini</h3></div>
-                            <div class="col-md-10"></div>
+                            <div class="col-md-4"><h3>Immagini</h3></div>
+                            <div class="col-md-8"></div>
                            
                             @foreach($announcement->images as $image) 
                         
                             <div class="row mb-2">
-                                <div class="col-md-4">
+                                <div class="col-md-6 co-12">
                                     <img src="{{ $image->getUrl(300,150) }}" class="d-block w-100" alt="...">
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-md-6 col-12 card-user">
                                     Adult 🔞:{{$image->adult}} <br>
                                     Medical 💉 :{{$image->medical}} <br>
                                     Spoof 🤬:{{$image->spoof}} <br>
                                     Violence 👊🏻🩸:{{$image->violence}} <br>
                                     Racy 👬 👬:{{$image->adult}} <br>
-                                    {{$image->id}} <br>
-                                    {{$image->file}} <br>
-                                    {{Storage::url($image->file)}} <br>
+                                    <h5>ID: {{$image->id}}</h5> <br>
+                                    <!-- {{$image->file}} <br>
+                                    {{Storage::url($image->file)}} <br> -->
 
                                     <strong>Labels</strong>
                                     <ul>
