@@ -27,6 +27,7 @@ class AnnouncementRequest extends FormRequest
             'title'=> 'required | max:70',
             'description'=> 'required | max:250',
             'price'=> 'required',
+            'category' => 'required',
         ];
     }
 
@@ -37,6 +38,7 @@ class AnnouncementRequest extends FormRequest
             'description.required' => 'La descrizione è obbligatoria',
             'price.required' => 'Il prezzo è obbligatorio',
             'description.max'=>'La descrizione deve essere di massimo 250 caratteri',
+            'category.required' => 'La categoria é obbligatoria'
 
         ];
     }

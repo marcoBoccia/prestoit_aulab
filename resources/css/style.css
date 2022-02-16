@@ -17,7 +17,7 @@
     background: url(../../public/images/File-Transfer.png);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    
 }
 
 
@@ -226,19 +226,22 @@
 
 .formannunci{
     background-color: #2f366dd8;
-    width: 500px;
-    height: 50vh;
+    min-width: 400px;
+    height: 40vh;
     border-radius: 5px;
     box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
+    padding: 1rem;
+    
     
 }
 .formdropzone{
     background-color: #2f366dd8;
-    width: 500px;
-    height: 60vh;
+    width: 40%;
+    /* height: 60vh; */
     border-radius: 5px;
     box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
-    margin-top: 100px;
+    /* margin-top: 100px; */
+    padding:1rem;
     
 }
 /* .flex-form input [type="text"]{

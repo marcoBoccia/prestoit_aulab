@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
 </head>
 <body>
+    <x-nav/>
     <div class="min-vh-100">
-        <x-nav/>
         {{$slot}}
     </div>
 
