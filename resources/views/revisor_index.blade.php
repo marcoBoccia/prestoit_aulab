@@ -86,7 +86,7 @@
         
     </div>
     @else
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center " >
             <h2 class="class text-danger mt-5">Non ci sono più annunci da revisionare</h2>
         </div>
     @endif

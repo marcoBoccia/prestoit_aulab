@@ -11296,7 +11296,19 @@ textarea.form-control-lg {
     border-bottom: solid 2px black;
 }
 
+.sfondoform{
+    background: url(/images/File-Transfer.png?a2a67ebc364151ccd551ee9d9b269653);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
 
+.sfondoEmpty{
+    background: url(/images/Empty-State.png?a491f044f8d10d8128b73ca8951330ea);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
 
 .search{
     background-color:var(--main-red);
@@ -11324,6 +11336,12 @@ textarea.form-control-lg {
 }
 
 /* SEZIONE CATEGORIE */
+
+.cardwelcome{
+    border-bottom: solid 3px var(--main-blue);
+    border-radius: 15px;
+
+}
 
  .category-card{
 
@@ -11490,6 +11508,24 @@ textarea.form-control-lg {
 
 /* {{-- FORM PER INSERIMENTO ANNUNCI --}} */
 
+
+.formannunci{
+    background-color: #2f366dd8;
+    width: 500px;
+    height: 50vh;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
+    
+}
+.formdropzone{
+    background-color: #2f366dd8;
+    width: 500px;
+    height: 60vh;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
+    margin-top: 100px;
+    
+}
 /* .flex-form input [type="text"]{
     display: flex;
 }
@@ -11699,12 +11735,6 @@ textarea.form-control-lg {
     position: relative;
 } */
 
-.form {
-    width: 500px;
-    height: 50vh;
-    background-color: blue;
-    border-radius: 5px;
-}  
 
 /* BUTTON */
 

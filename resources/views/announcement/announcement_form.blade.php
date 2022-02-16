@@ -9,11 +9,11 @@
              </ul>
          </div>
      @endif
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <header class=" d-flex justify-content-center align-items-center mt-5">
-                <form class="form" method="POST" action="{{ route('announcement_submit') }}" enctype="multipart/form-data">
+<div class="container sfondoform">
+    <div class="row justify-content-center">
+        <div class="col-6 d-flex justify-content-center flex-column  ">
+            <header class=" d-flex justify-content-evenly mt-5 formannunci">
+                <form class=" d-flex justify-content-evenly flex-column" method="POST" action="{{ route('announcement_submit') }}" enctype="multipart/form-data">
        
                     @csrf
        
@@ -42,15 +42,15 @@
                             @endforeach
                         </select>
                     </div>
-                </header>
-            </form>
+                </form>
+            </header>
         </div>
         {{-- DROPZONE --}}
-        <div class="col-6">
-            <div class='form-group row'>
-                <label form="images" class="col-md-12 col-form-label text-md-right">Immagini
+        <div class="col-6 d-flex justify-content-center flex-column formdropzone">
+            <div class='form-group '>
+                <label form="images" class="col-md-12 col-form-label text-white text-md-right">Inserisci le tue immagini
                 </label>
-                <div class="col-md-12">
+                <!-- <div class="col-md-12"> -->
             
                     <div class="dropzone" id="drophere"></div>
             
@@ -59,9 +59,10 @@
                             <strong>({ $message )}</strong>
                         </span>
                     @enderror
-                </div>
+                    <button type="submit" class="button-24 mt-5">Submit</button>
+                <!-- </div> -->
             </div>
-            <button type="submit" class="button-24">Submit</button>
+            
             
         </div>
     </div>

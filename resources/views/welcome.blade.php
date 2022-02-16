@@ -184,7 +184,7 @@
             <div class="row justify-content-evenly">
                 @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-6 my-3 d-flex">
-                            <div class="category-card">
+                            <div class="category-card cardwelcome">
                                 <h4 style="color:black">{{ $announcement->title }}</h4> 
                                 <h4 style="color:black"> {{ $announcement->price }}$</h4>
                                 
@@ -214,7 +214,7 @@
                                         <li>inserito da: {{ $announcement->user->name}}</li>
                                     </ul>
                                 </div>
-                                <button class="btn-info btn"><a class="text-dark" href="{{route('announcement_detail', ['a'=>$announcement])}}">Vai al dettaglio</a></button>
+                                <button class="button-24 btn"><a class="text-dark" href="{{route('announcement_detail', ['a'=>$announcement])}}">Vai al dettaglio</a></button>
                             </div> 
                         </div>
                         @endforeach
