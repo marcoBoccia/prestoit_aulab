@@ -19,7 +19,7 @@
         </div>
     </div>
 
-    <div class="container" style="border: 2px solid red">
+    <div class="container">
         <div class="row justify-content-evenly">
             @foreach($announcements as $a)
             <div class="col-12 col-md-4"> 

@@ -157,11 +157,11 @@
                 <label for="from">
                  
                 </label>
-                <div class="search1">
-                <input class="flex-forms search  " type="text" name="q">
-                <!-- <input  value="Search" > -->
-                <button type="submit" class="button-24"> 
-                    <i class="fa-solid fa-magnifying-glass fs-3"></i>
+                <div class="search1 rounded-pill">
+                <input class="flex-forms search rounded-pill" type="text" name="q" placeholder="Motori, immobili, tele">
+                
+                <button type="submit" class="btn color-blue rounded-pill"> 
+                    <i class="fa-solid fa-magnifying-glass fs-3 text-white"></i>
                 </button>
             </div>
             </form>
@@ -180,16 +180,15 @@
         
         
         
-        <div class="container-fluid mb-2">
+        <div class="container mb-2">
             <div class="row justify-content-evenly">
                 @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-6 my-3 d-flex">
-                            <div class="category-card cardwelcome">
-                                <h4 style="color:black">{{ $announcement->title }}</h4> 
-                                <h4 style="color:black"> {{ $announcement->price }}$</h4>
+                            <div class="category-card">
+                                <div class="card-content">
                                 
-                                    <!-- <img src="https://via.placeholder.com/300x150.png" class="rounded float-right img" alt=""> -->
-
+                                    <h4 class="card-title">{{ $announcement->title }}</h4> 
+                                    <h4 class="card-title"> {{ $announcement->price }}$</h4>
 
                                     @if($announcement->image != "[]")
                     
@@ -207,15 +206,16 @@
                                 
                                 <div class="text-dark">
                                     <ul>
-                                        <strong>Category:<a class="text-dark" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
+                                        <strong>Categoria:<a class="text-dark" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
                                         <li>{{ $announcement->description }}</li>
                                         <li>{{ $announcement->price }}$</li>
                                         <li>{{ $announcement->created_at->format('d/m/Y') }}</li>
                                         <li>inserito da: {{ $announcement->user->name}}</li>
                                     </ul>
                                 </div>
-                                <button class="button-24 btn"><a class="text-dark" href="{{route('announcement_detail', ['a'=>$announcement])}}">Vai al dettaglio</a></button>
-                            </div> 
+                                <button class="btn button-24bis"><a class="text-white" style="text-decoration: none" href="{{route('announcement_detail', ['a'=>$announcement])}}">Vai al dettaglio</a></button>
+                                 </div> 
+                            </div>
                         </div>
                         @endforeach
                     </div>

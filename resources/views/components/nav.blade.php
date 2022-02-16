@@ -14,21 +14,6 @@
                   <a class="nav-link active nav-color" aria-current="page" href="{{route("welcome")}}">{{__('ui.home')}}</a>
               </li>
 
-              
-              
-              @guest
-              <li class="nav-item">
-                <a class="nav-link active nav-color" href="{{route("login")}}">{{__('ui.login')}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active nav-color" href="{{route("register")}}">{{__('ui.register')}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active nav-color" href="{{route("announcement_index")}}">{{__('ui.ads')}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active nav-color" href="{{route("announcement_form")}}">{{__('ui.sell')}}</a>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{__('ui.category')}} 
@@ -43,6 +28,21 @@
                   @endforeach
                 </ul>
               </li>
+              
+              @guest
+              <li class="nav-item">
+                <a class="nav-link active nav-color" href="{{route("login")}}">{{__('ui.login')}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active nav-color" href="{{route("register")}}">{{__('ui.register')}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active nav-color" href="{{route("announcement_index")}}">{{__('ui.ads')}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active nav-color" href="{{route("announcement_form")}}">{{__('ui.sell')}}</a>
+              </li>
+             
       
               
               <li class="nav-item">

@@ -9,15 +9,16 @@
         </div>
     </div>
     
-    <div class="container py-4" style="border: solid 3px blue;">
-        <div class="row justify-content-center" style="border: solid 3px green;">
-            <div class="col-md-8" style="border: solid 3px red;">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
                         Annuncio # {{$announcement->id}}
                     </div>
+                    
                     <div class="card-body">
-                        <div class="" style="border: solid 3px red;">
+                        <div class="">
                             <div class="row">
                             <div class="col-md-6 col-12">
                                 <h3>Utente</h3>
@@ -51,18 +52,17 @@
                             @foreach($announcement->images as $image) 
                         
                             <div class="row mb-2">
-                                <div class="col-md-6 co-12">
+                                <div class="col-12 col-md-6">
                                     <img src="{{ $image->getUrl(300,150) }}" class="d-block w-100" alt="...">
                                 </div>
-                                <div class="col-md-6 col-12 card-user">
+                                <div class="col-12 col-md-6 card-user">
                                     Adult 🔞:{{$image->adult}} <br>
                                     Medical 💉 :{{$image->medical}} <br>
                                     Spoof 🤬:{{$image->spoof}} <br>
                                     Violence 👊🏻🩸:{{$image->violence}} <br>
                                     Racy 👬 👬:{{$image->adult}} <br>
                                     <h5>ID: {{$image->id}}</h5> <br>
-                                    <!-- {{$image->file}} <br>
-                                    {{Storage::url($image->file)}} <br> -->
+                                    
 
                                     <strong>Labels</strong>
                                     <ul>
@@ -77,27 +77,27 @@
                             </div>
                             
                             @endforeach
-                            
+                            <div class="row justify-content-center">
+                                <div class="col-md-6">
+                                    <form action="{{route("revisor_reject", $announcement->id)}}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn button-reject">Reject</button>
+                                    </form>
+                                </div>
+                                <div class="col-md-6 text-end">
+                                    <form action="{{route("revisor_accepted", $announcement->id)}}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn button-accept">Accept</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <form action="{{route("revisor_reject", $announcement->id)}}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Reject</button>
-                </form>
-            </div>
-            <div class="col-md-6 text-end">
-                <form action="{{route("revisor_accepted", $announcement->id)}}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-success">Accept</button>
-                </form>
-            </div>
-        </div>
+        
         
     </div>
     @else

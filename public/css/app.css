@@ -11285,6 +11285,9 @@ textarea.form-control-lg {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+.color-blue {
+    background-color: var(--main-blue);
+}
 
 .card-user{
     border: solid 2px black;
@@ -11293,10 +11296,10 @@ textarea.form-control-lg {
     margin-top: 10px;
 }
 
-/* .card-info{
+.card-info{
     border-radius: 5px;
     background-color: var(--main-red);
-} */
+}
 
 .prova{
     border-bottom: solid 1px black;
@@ -11305,7 +11308,8 @@ textarea.form-control-lg {
 
 }
 .search1{
-    border-bottom: solid 2px black;
+    border: solid 2px white;
+    background-color: white;
 }
 
 .sfondoform{
@@ -11317,7 +11321,7 @@ textarea.form-control-lg {
 
 
 .search{
-    background-color:var(--main-red);
+    background-color:white;
     width: 60vh;
     border-radius: 15px;
     
@@ -11328,7 +11332,7 @@ textarea.form-control-lg {
 .sfondo{
     background: url(/images/sfondosito.png?6e09afb600e6006175436e7d8d0f9887);
     background-size: cover;
-    height: 93vh;
+    height: 100vh;
 }
 
 :root {
@@ -11759,8 +11763,8 @@ textarea.form-control-lg {
 /* BUTTON */
 
 .button-24 {
-    background: #2f366dde;
-    border: 1px solid #2f366dde;
+    background: var(--main-blue);
+    border: 1px solid var(--main-blue);
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;
@@ -11790,7 +11794,7 @@ textarea.form-control-lg {
 .button-24:active {
     background-color: initial;
     background-position: 0 0;
-    color: var(--dark-color);
+    color: var(--main-blue);
 }
   
 .button-24:active {
@@ -11827,9 +11831,9 @@ textarea.form-control-lg {
 
 .button-24bis:hover,
 .button-24bis:active {
-    background-color: initial;
+    background-color: var(--main-red);
     background-position: 0 0;
-    color: black;
+    color: white;
 }
   
 .button-24bis:active {
@@ -11839,7 +11843,7 @@ textarea.form-control-lg {
 /* FOOTER */
 
 .my-footer {
-    background-color: #212529;
+    background-color: var(--main-blue);
     color: var(--main-red);
 }
 .dropzone, .dropzone * {
