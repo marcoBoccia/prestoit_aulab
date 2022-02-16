@@ -14,8 +14,15 @@
                     <div class="">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
+
+                            <!-- @foreach ($a->images as $key => $image)
+                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <img class="img-fluid card-image" src="{{ $image->getUrl(500, 500) }}"
+                                class="d-block" alt="https://via.placeholder.com/150%22%3E"
+                        </div> -->
+                    <!-- @endforeach -->
     
-                                <div class="carousel-item active">
+                                 <div class="carousel-item active">
                                     
                                         <img src="{{$a->images->first()->getUrl(300, 150)}}" alt="immagine prodotto">
                                     

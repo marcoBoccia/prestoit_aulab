@@ -3,9 +3,9 @@
     @if ($announcement)
         
     
-    <div class="container">
+    <div class="container ">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-12 ">
                 <div class="card">
                     <div class="card-header">
                         Annuncio # {{$announcement->id}}
@@ -32,13 +32,65 @@
                             <div class="col-md-10">{{$announcement->description}}</div>
                         </div>
                         <div class="row">
+                            <div class="col-md-2"><h3>Categoria</h3></div>
+                            <div class="col-md-10">{{$announcement->category->name}}</div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-2"><h3>Immagini</h3></div>
                             <div class="col-md-10"></div>
                            
                             @foreach($announcement->images as $image)
                             <div class="row mb-2">
                                 <div class="col-md-4">
-                                    <img src="{{ $image->getUrl(300,150) }}" class="d-block w-100" alt="...">
+                                    <!-- <img src="{{ $image->getUrl(300,150) }}" class="d-block w-100" alt="..."-->
+                                        <!-- INIZIO CAROSELLO -->
+                                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+
+                            <!-- @foreach ($a->images as $key => $image)
+                         <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <img class="img-fluid card-image" src="{{ $image->getUrl(500, 500) }}"
+                                class="d-block" alt="https://via.placeholder.com/150%22%3E"
+                        </div> -->
+                    <!-- @endforeach -->
+    
+                                 <div class="carousel-item active">
+                                    
+                                        <img src="{{$a->images->first()->getUrl(300, 150)}}" alt="immagine prodotto">
+                                    
+                                </div>
+                                <div class="carousel-item">
+                                    
+                                    <img src="{{$a->images->last()->getUrl(300, 150)}}" alt="immagine prodotto">
+                                
+                                </div>
+                                    @foreach($a->images as $image)
+                                
+                                    <div class="carousel-item">
+                                        <img src="{{ $image->getUrl(300,150) }}" alt="immagine prodotto">
+                                    </div>
+                                    @endforeach
+
+                            {{-- <div class="carousel-item active">
+                                <img src="{{$a->images[0]->getUrl(300, 150)}}" alt="immagine prodotto">
+                            </div> --}}
+                            {{-- <div class="carousel-item">
+                                <img src="{{Storage::url($a->images->all()[1]->file)}}" alt="immagine prodotto">
+                            </div> --}}
+                            
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                                        <!-- FINE CAROSELLO -->
+
+                                 
                                 </div>
                                 <div class="col-md-8">
                                     Adult 🔞:{{$image->adult}} <br>

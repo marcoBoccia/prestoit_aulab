@@ -21,24 +21,24 @@
             <div class="cardcontainer">
                 <div class="card-body text-center">
                     
-        
-                    {{-- @if($a->images->toArray() != "[]") --}}
+      
+                    @if($a->images->toArray() != "[]")
                         @foreach($a->images as $image)
                             
                                 <img src="{{ $image->getUrl(300,150) }}" alt="immagine prodotto">
                         @endforeach
                         
-                    {{-- @else
+                    @else
                     <h1>fuck</h1>
                     <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
 
-                    @endif --}}
+                    @endif 
                     
                     <h4 class="card-title">{{$a->title}}</h4>
                     <h4 class="card-title">{{$a->description}}</h4>
                     <h4 class="card-title">{{$a->price}}</h4>
                     <a href="{{route("announcement_detail", compact("a"))}}" class="button-24">Vai al dettaglio</a>
-                   {{--  <a href="{{route("announcement_detail", ["a"=>$a])}}" class="btn btn-primary">Vai al dettaglio</a> --}}
+                    <!-- <a href="{{route("announcement_detail", ["a"=>$a])}}" class="btn btn-primary">Vai al dettaglio</a>  -->
                 </div>
             </div>
         </div>

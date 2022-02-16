@@ -129,7 +129,7 @@ class AnnouncementModelController extends Controller
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
             
-        return redirect(route('announcement_form'))->with('status', 'Prodotto aggiunto correttamente');
+        return redirect(route('announcement_form'))->with('message', 'Annuncio aggiunto correttamente');
     }
 
     public function uploadImage(Request $request){

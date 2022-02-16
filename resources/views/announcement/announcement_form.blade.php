@@ -1,6 +1,6 @@
 <x-layout>
 
-    {{-- @if ($errors->any())
+    <!-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -8,9 +8,14 @@
             @endforeach
         </ul>
     </div>
-    @endif --}}
+    @endif  -->
 
-    
+    @if (session("message"))
+        <div class="alert alert-info d-flex justify-content-center fs-5">
+            {{session("message")}}
+        </div>
+    @endif
+
     <div class="sfondoform min-vh-100">
         <div class="container py-4">
             <div class="row justify-content-center">
@@ -65,7 +70,7 @@
                                 @if($errors->any() && isset($errors->toArray()['category']))
                                     <p class="text-danger fw-bold d-inline">{{ $errors->toArray()['category'][0] }}</p>
                                 @endif
-                                <select class="form-select text-danger" name="category" id="category">
+                                <select class="form-select text-dark" name="category" id="category">
                                     <option value=" "></option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}" @if (old('category') == "$category->id") {{ 'selected' }} @endif>
