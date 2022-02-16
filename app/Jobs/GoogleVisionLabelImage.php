@@ -55,6 +55,7 @@ class GoogleVisionLabelImage implements ShouldQueue
             }
             // echo json_encode($result);
             $i->labels = $result;
+            
             $i->save();
         }
 

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Container\RewindableGenerator;
 
 
@@ -109,16 +110,19 @@ class AnnouncementModelController extends Controller
 
                 Storage::move($image, $newFileName);
 
-                    dispatch(new ResizeImage($newFileName,300,150));
+                    
                     // dispatch(new ResizeImage($newFileName,400,300));
 
                 $i->file = $newFileName;
                 $i->announcement_model_id = $announcement->id;
 
                 $i->save();
-
-                dispatch(new GoogleVisionSafeSearchImage($i->id));
-                dispatch(new GoogleVisionLabelImage($i->id));
+        
+                GoogleVisionSafeSearchImage::withChain([
+                    new GoogleVisionLabelImage($i->id),
+                    new GoogleVisionRemoveFaces($i->id),
+                    new ResizeImage($i->file,300,150),
+                ])->dispatch($i->id);
             }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
