@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
 use App\Jobs\GoogleVisionRemoveFaces;
+use App\Jobs\GoogleVisionWatermark;
 use Illuminate\Container\RewindableGenerator;
 
 
@@ -121,6 +122,7 @@ class AnnouncementModelController extends Controller
                 GoogleVisionSafeSearchImage::withChain([
                     new GoogleVisionLabelImage($i->id),
                     new GoogleVisionRemoveFaces($i->id),
+                    new GoogleVisionWatermark($i->id),
                     new ResizeImage($i->file,300,150),
                 ])->dispatch($i->id);
             }
