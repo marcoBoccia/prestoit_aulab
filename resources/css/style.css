@@ -155,7 +155,7 @@
     background-repeat: no-repeat;
     height:100%;
     background-position: center;
-    background-size: cover;
+    background-size: cover; 
     background-attachment: fixed;
     min-height: 25vh;
 
@@ -390,6 +390,7 @@
 }
 
 
+
 /* CARDS */
 
 .cardcontainer {
@@ -445,7 +446,7 @@
 /* BUTTON */
 
 .button-24 {
-    background:blue;
+    background:var(--main-blue);
     border: 1px solid var(--main-blue);
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
@@ -482,7 +483,7 @@
 }
 
 .button-24bis {
-    background: white;
+    background: var(--main-blue);
     border: 1px solid white;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
