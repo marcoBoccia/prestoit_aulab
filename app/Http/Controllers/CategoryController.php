@@ -20,8 +20,11 @@ class CategoryController extends Controller
         // $announcements = AnnouncementModel::find($id);
         // $announcements = AnnouncementModel::find($id);
         $announcements = Category::find($id)->announcements()->where('is_accepted',true)->orderBy('created_at','desc')->take(3)->get();
+        $category = Category::find($id)->name;
+        
         // dd($announcements->all());
-        return view('category.category_index', compact('announcements'));
+        return view('category.category_index', [
+            "announcements" => $announcements , "category" => $category]);
     }
 
     /**

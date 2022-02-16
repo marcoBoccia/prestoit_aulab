@@ -7,4 +7,5 @@ return [
     'register' => 'Registrati',
     'ads' => 'Annunci',
     'sell' => 'Inserisci un annuncio',
+    'category' => 'Categorie',
 ];

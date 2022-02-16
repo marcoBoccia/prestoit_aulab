@@ -15,7 +15,7 @@
 
 .sfondoform{
     background: url(../../public/images/File-Transfer.png);
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     
 }
@@ -227,12 +227,11 @@
 .formannunci{
     background-color: #2f366dd8;
     min-width: 400px;
-    height: 40vh;
+    max-height: 50vh;
+    min-height: 40vh;
     border-radius: 5px;
     box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
-    padding: 1rem;
-    
-    
+    padding: 1rem; 
 }
 .formdropzone{
     background-color: #2f366dd8;
@@ -427,7 +426,7 @@
 /* CARDS */
 
 .cardcontainer {
-    max-width: 350px;
+    max-width: 300px;
     min-width: 500px;
     display: flex;
     flex-direction: column;
@@ -448,6 +447,18 @@
     margin-bottom: 15px;
     /* filter: grayscale(100%); */
     transition: all 0.4s ease-in-out;
+}
+
+/* CARD PER CATEGORIA */
+
+.formannunci2{
+    background-color: #2f366dde;
+    min-width: 400px;
+    max-height: 50vh;
+    min-height: 40vh;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px 3px rgba(145, 125, 160, 1);
+    padding: 1rem; 
 }
 
 /* FORM */
@@ -473,8 +484,8 @@
 /* BUTTON */
 
 .button-24 {
-    background:var(--main-blue);
-    border: 1px solid var(--main-blue);
+    background: #2f366dde;
+    border: 1px solid #2f366dde;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
     box-sizing: border-box;

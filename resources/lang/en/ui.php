@@ -7,4 +7,5 @@ return [
     'register' => 'Register',
     'ads' => 'Announcements',
     'sell' => 'Start selling',
+    'category' => 'Categories',
 ];

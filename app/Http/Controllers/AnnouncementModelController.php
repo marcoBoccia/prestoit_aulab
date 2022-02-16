@@ -37,7 +37,7 @@ class AnnouncementModelController extends Controller
     public function index()
     {   
             // $announcements = AnnouncementModel::all();
-        $announcements = AnnouncementModel::where('is_accepted',true)->orderBy('created_at','desc')->take(5)->get();
+        $announcements = AnnouncementModel::where('is_accepted',true)->orderBy('created_at','desc')->get();
 
         return view('announcement.announcement_index', compact('announcements'));
     }

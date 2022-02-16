@@ -6,6 +6,13 @@
     @endif
 
     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <h1 class="display-2 fw-bold text-center">Annunci</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
         <div class="row">
             
         @foreach($announcements as $a)
@@ -14,18 +21,18 @@
             <div class="cardcontainer">
                 <div class="card-body text-center">
                     
-                    @if($a->image != "[]")
-                    
+        
+                    {{-- @if($a->images->toArray() != "[]") --}}
                         @foreach($a->images as $image)
                             
                                 <img src="{{ $image->getUrl(300,150) }}" alt="immagine prodotto">
                         @endforeach
                         
-                    @else
+                    {{-- @else
                     <h1>fuck</h1>
                     <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
 
-                    @endif
+                    @endif --}}
                     
                     <h4 class="card-title">{{$a->title}}</h4>
                     <h4 class="card-title">{{$a->description}}</h4>

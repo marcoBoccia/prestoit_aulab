@@ -1,6 +1,6 @@
 <x-layout>
 
-    @if ($errors->any())
+    {{-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -8,9 +8,17 @@
             @endforeach
         </ul>
     </div>
-    @endif
+    @endif --}}
 
-    <div class="sfondoform min-vh-100" >
+    
+    <div class="sfondoform min-vh-100">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <h2 class=" display-5 fw-bold text-center">Inserisci il tuo annuncio</h2>
+                </div>
+            </div>
+        </div>
         <div class=" my-5" >
             <div class="">
                 <header class="">
@@ -22,7 +30,7 @@
                         <div class= "col-4  formannunci">
                             <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}" id="uniqueSecret">
                             <div class="mb-3">
-                                <h5 style="color: red"> {{ $uniqueSecret }}</h5>
+                                
 
                                 
                                 <label for="exampleInputEmail1" class="form-label text-white">Inserisci il titolo</label>

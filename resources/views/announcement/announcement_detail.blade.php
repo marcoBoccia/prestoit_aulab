@@ -1,30 +1,44 @@
 <x-layout>
     <div class="container">
         <div class="row justify-content-center">
+            <div class="col">
+                <h1 class="display-2 fw-bold text-center">Dettagli dell'annuncio</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
 
             <div class="col-6 my-3 d-flex ">
                 <div class="cardcontainer" style="width: 18rem;">
                     <div class="">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                
-                                
-                                
-                                @if($a->image != "[]")
+    
+                                <div class="carousel-item active">
                                     
+                                        <img src="{{$a->images->first()->getUrl(300, 150)}}" alt="immagine prodotto">
+                                    
+                                </div>
+                                <div class="carousel-item">
+                                    
+                                    <img src="{{$a->images->last()->getUrl(300, 150)}}" alt="immagine prodotto">
+                                
+                                </div>
                                     @foreach($a->images as $image)
-                                        
-                                    
-                                    <div class="carousel-item active">
-                                        <img src="{{ Storage::url($image->file) }}" alt="immagine prodotto">
+                                
+                                    <div class="carousel-item">
+                                        <img src="{{ $image->getUrl(300,150) }}" alt="immagine prodotto">
                                     </div>
                                     @endforeach
-                                    
-                                @else
-                                <h1>fuck</h1>
-                                <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
 
-                                @endif
+                            {{-- <div class="carousel-item active">
+                                <img src="{{$a->images[0]->getUrl(300, 150)}}" alt="immagine prodotto">
+                            </div> --}}
+                            {{-- <div class="carousel-item">
+                                <img src="{{Storage::url($a->images->all()[1]->file)}}" alt="immagine prodotto">
+                            </div> --}}
+                            
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
