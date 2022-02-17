@@ -173,7 +173,7 @@
         <div class="container mt-5 py-5">
             <div class="row justify-content-center">
                 <div class="col">
-                    <h2 class=" display-5 fw-bold text-center">Ultimi annunci</h2>
+                    <h2 class=" display-5 fw-bold text-center">{{__('ui.lastads')}}</h2>
                 </div>
             </div>
         </div>

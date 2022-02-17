@@ -8,4 +8,6 @@ return [
     'ads' => 'Artikeln',
     'sell' => 'Verkaufen',
     'category' => 'Kategorien',
+    'lastads' => 'Neueste Artikel'
+    
 ];

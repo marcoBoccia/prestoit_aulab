@@ -76,10 +76,10 @@
                 
                 
                 <li class="nav-item">
-                  <a class="nav-link active nav-color" href="{{route("announcement_index")}}">Annunci</a>
+                  <a class="nav-link active nav-color" href="{{route("announcement_index")}}">{{__('ui.ads')}}</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active nav-color" href="{{route("announcement_form")}}">Inserisci annunci</a>
+                  <a class="nav-link active nav-color" href="{{route("announcement_form")}}">{{__('ui.sell')}}</a>
                 </li>
                 <li class="nav-item">
                   @include('components._locale', ['lang' => 'it', 'nation' => 'it'])
