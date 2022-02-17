@@ -158,7 +158,7 @@
                  
                 </label>
                 <div class="search1 rounded-pill">
-                <input class="flex-forms search rounded-pill" type="text" name="q" placeholder="Motori, immobili, tele">
+                <input class="flex-forms search rounded-pill" type="text" name="q" placeholder="Motori, Immobili ,Elettronica">
                 
                 <button type="submit" class="btn color-blue rounded-pill"> 
                     <i class="fa-solid fa-magnifying-glass fs-3 text-white"></i>
@@ -184,11 +184,11 @@
             <div class="row justify-content-evenly">
                 @foreach ($announcements as $announcement)
                 <div class="col-12 col-md-6 my-3 d-flex">
-                            <div class="category-card">
+                            <div class="cardcontainer" style="width:14rem;">
                                 <div class="card-content">
                                 
-                                    <h4 class="card-title">{{ $announcement->title }}</h4> 
-                                    <h4 class="card-title"> {{ $announcement->price }}$</h4>
+                                    <h4 class="card-title"> -{{ $announcement->title }}</h4> 
+                                    <h4 class="card-title"> -{{ $announcement->price }}$</h4>
 
                                     @if($announcement->image != "[]")
                     
@@ -206,7 +206,7 @@
                                 
                                 <div class="text-dark">
                                     <ul>
-                                        <strong>Categoria:<a class="text-dark" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong>
+                                        <li><strong>Categoria:  <a class="text-primary text-decoration-none" href="{{route('category_index', ['id'=>$announcement->category->id])}}">{{ $announcement->category->name }}</a></strong></li>
                                         <li>{{ $announcement->description }}</li>
                                         <li>{{ $announcement->price }}$</li>
                                         <li>{{ $announcement->created_at->format('d/m/Y') }}</li>

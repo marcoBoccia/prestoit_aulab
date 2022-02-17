@@ -12,7 +12,7 @@
     <div class="container py-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card border border-dark">
                     <div class="card-header">
                         Annuncio # {{$announcement->id}}
                     </div>
@@ -81,13 +81,13 @@
                                 <div class="col-md-6">
                                     <form action="{{route("revisor_reject", $announcement->id)}}" method="POST">
                                         @csrf
-                                        <button type="submit" class="btn button-reject">Reject</button>
+                                        <button type="submit" class="btn button-reject btn-danger">Reject</button>
                                     </form>
                                 </div>
                                 <div class="col-md-6 text-end">
                                     <form action="{{route("revisor_accepted", $announcement->id)}}" method="POST">
                                         @csrf
-                                        <button type="submit" class="btn button-accept">Accept</button>
+                                        <button type="submit" class="btn button-accept btn-success">Accept</button>
                                     </form>
                                 </div>
                             </div>

@@ -6,10 +6,9 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row justify-content-center">
-
-            <div class="col-6 my-3 d-flex ">
+    <div class="sfondo">
+        <div class="row container justify-content-center mx-auto">
+            <div class="col-6 my-3 d-flex">
                 <div class="cardcontainer" style="width: 18rem;">
                     <div class="">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -58,9 +57,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{$a->title}}</h5>
-                        <h5 class="card-title">{{$a->description}}</h5>
-                        <h5 class="card-title">{{$a->price}}</h5>
+                        <h5 class="card-title"> -{{$a->title}}</h5>
+                        <h5 class="card-title"> -{{$a->description}}</h5>
+                        <h5 class="card-title"> -{{$a->price}}</h5>
                     </div>
                 </div>
             </div>

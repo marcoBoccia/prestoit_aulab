@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg mynavbar navbar-dark prova">
   <div class="container-fluid">
   <a class="navbar-brand nav-color" href="{{route("welcome")}}">
- {{--  <img src="{{URL::asset('/images/logopresto.png')}}" alt="" style="width: 90px"> --}}
+  <img src="{{URL::asset('/images/logopresto.png')}}" alt="" style="width: 90px">
   </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@
               </li>
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle nav-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle nav-color text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   {{__('ui.category')}} 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">

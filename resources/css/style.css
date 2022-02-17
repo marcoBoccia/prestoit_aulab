@@ -527,7 +527,7 @@
   
 .button-24:hover,
 .button-24:active {
-    background-color: initial;
+    background-color: white;
     background-position: 0 0;
     color: var(--main-blue);
 }
