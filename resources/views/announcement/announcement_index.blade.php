@@ -29,7 +29,7 @@
                         @endforeach
                         
                     @else
-                    <h1>fuck</h1>
+                    
                     <img class="img-fluid" src="https://via.placeholder.com/300x150.png">
 
                     @endif 
