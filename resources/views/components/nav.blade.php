@@ -62,6 +62,7 @@
               
               @else    
               
+              
               @if (Auth::user()->is_revisor)
               
               <li class="nav-item">
@@ -80,15 +81,26 @@
                 <li class="nav-item">
                   <a class="nav-link active nav-color" href="{{route("announcement_form")}}">Inserisci annunci</a>
                 </li>
+                <li class="nav-item">
+                  @include('components._locale', ['lang' => 'it', 'nation' => 'it'])
+                  
+                  </li>
+    
+                  <li class="nav-item">
+                  @include('components._locale', ['lang' => 'gb', 'nation' => 'gb'])
+                    
+                  </li>
+    
+                  <li class="nav-item">
+                  @include('components._locale', ['lang' => 'de', 'nation' => 'de'])
+                    
+                  </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle nav-color" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {{Auth::user()->name}} <i class="fa-solid fa-user"></i>
                   </a>
                   <ul class="dropdown-menu mt-3 " aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="">Profilo</a></li>
-                    <li>
-                      
-                      </li>
                       <li><a class="dropdown-item" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                       <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                         @csrf
